@@ -1,2 +1,2 @@
 # Basilisk-Zero
-2D psychological horror game
+A 2D psychological horror game based on the thought experiment of Roko's Basilisk
