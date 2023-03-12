@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movFilter;
 
     Vector2 movInput;
+    SpriteRenderer spriteRend;
     Rigidbody2D playerRB;
+    Animator animator;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -18,6 +20,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     // For handling player input
@@ -25,25 +29,36 @@ public class PlayerController : MonoBehaviour
     {
         if (movInput != Vector2.zero)
         {
-            bool tryMov = canMove(movInput);
+            bool tryMov = CastMove(movInput);
 
             // try moving only on x axis
-            if (!tryMov)
+            if (!tryMov && movInput.x > 0)
             {
-                tryMov = canMove(new Vector2(movInput.x, 0));
-
-                // try moving only on y axis
-                if (!tryMov)
-                {
-                    canMove(new Vector2(0, movInput.y));
-                }
+                tryMov = CastMove(new Vector2(movInput.x, 0));
             }
 
+            // try moving only on y axis
+            if (!tryMov && movInput.y > 0)
+            {
+                tryMov = CastMove(new Vector2(0, movInput.y));
+            }
+
+            animator.SetBool("isMoving", tryMov);
+        } else
+        {
+            animator.SetBool("isMoving", false);
         }
 
+        // Flip x direction depending on input
+        if (movInput.x < 0)
+        {
+            spriteRend.flipX = true;
+        } else if (movInput.x > 0) {
+            spriteRend.flipX = false;
+        }
     }
 
-    private bool canMove(Vector2 dir)
+    private bool CastMove(Vector2 dir)
     {
             // Checks to see if player collides with anything
         int colCount = playerRB.Cast(
