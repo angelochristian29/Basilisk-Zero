@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461034255e348746843a7f13a193eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 1
+  movSpeed: 2.5
   collisionOffset: 0.05
   movFilter:
     useTriggers: 0
