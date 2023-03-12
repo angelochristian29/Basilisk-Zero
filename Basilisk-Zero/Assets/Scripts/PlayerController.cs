@@ -25,20 +25,41 @@ public class PlayerController : MonoBehaviour
     {
         if (movInput != Vector2.zero)
         {
-            // Checks to see if player collides with anything
-            int colCount = playerRB.Cast(
-                movInput,
-                movFilter, 
-                castCollisions, 
-                movSpeed + Time.fixedDeltaTime + collisionOffset);
+            bool tryMov = canMove(movInput);
 
-            if (colCount == 0)
+            // try moving only on x axis
+            if (!tryMov)
             {
-                playerRB.MovePosition(playerRB.position + movInput * movSpeed * Time.fixedDeltaTime);
+                tryMov = canMove(new Vector2(movInput.x, 0));
+
+                // try moving only on y axis
+                if (!tryMov)
+                {
+                    canMove(new Vector2(0, movInput.y));
+                }
             }
-            
+
         }
 
+    }
+
+    private bool canMove(Vector2 dir)
+    {
+            // Checks to see if player collides with anything
+        int colCount = playerRB.Cast(
+            dir,
+            movFilter, 
+            castCollisions, 
+            movSpeed * Time.fixedDeltaTime + collisionOffset);
+
+        if (colCount == 0)
+        {
+            playerRB.MovePosition(playerRB.position + movSpeed * Time.fixedDeltaTime * dir);
+            return true;
+        } else
+        {
+            return false;
+        }
     }
 
     void OnMove(InputValue movVal)
