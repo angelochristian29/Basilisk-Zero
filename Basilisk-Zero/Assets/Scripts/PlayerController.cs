@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour
             bool tryMov = CastMove(movInput);
 
             // try moving only on x axis
-            if (!tryMov && movInput.x > 0)
+            if (!tryMov)
             {
                 tryMov = CastMove(new Vector2(movInput.x, 0));
             }
 
             // try moving only on y axis
-            if (!tryMov && movInput.y > 0)
+            if (!tryMov)
             {
                 tryMov = CastMove(new Vector2(0, movInput.y));
             }
@@ -60,6 +60,10 @@ public class PlayerController : MonoBehaviour
 
     private bool CastMove(Vector2 dir)
     {
+        if (dir == Vector2.zero)
+        {
+            return false;
+        }
             // Checks to see if player collides with anything
         int colCount = playerRB.Cast(
             dir,
