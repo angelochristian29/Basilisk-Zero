@@ -1,0 +1,23 @@
+title: Start
+tags: 
+colorID: 0
+position: 782,169
+---
+Zach: Do you want to work on the tutorials?
+[[I better get them done |work]]
+[[Work tutorials are the worse |slacker]]
+===
+title: work
+tags: 
+colorID: 0
+position: 624,473
+---
+Zach: Okay good luck it's going to be a slug.
+===
+title: slacker
+tags: 
+colorID: 0
+position: 999,471
+---
+Zach: Hell Yea, let's play some games to pass the time!
+===
