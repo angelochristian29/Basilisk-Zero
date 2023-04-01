@@ -4,6 +4,7 @@ colorID: 0
 position: 782,169
 ---
 Zach: Hey my name's Zach nice to meet you!
+<<set $name to "Zach">>
 Zach: Do you want to work on the tutorials?
 -> Yes
    <<jump work>>
