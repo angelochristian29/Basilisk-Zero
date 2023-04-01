@@ -3,9 +3,12 @@ tags:
 colorID: 0
 position: 782,169
 ---
+Zach: Hey my name's Zach nice to meet you!
 Zach: Do you want to work on the tutorials?
-[[I better get them done |work]]
-[[Work tutorials are the worse |slacker]]
+-> Yes
+   <<jump work>>
+-> No
+   <<jump slacker>>
 ===
 title: work
 tags: 
