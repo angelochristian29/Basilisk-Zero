@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "InteractTest",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "ef5a8614-a102-47a3-a0e2-59501d369444",
                     "expectedControlType": "Button",
@@ -266,11 +266,11 @@
                 {
                     "name": "",
                     "id": "cf7d76d8-abdb-4184-b6ff-2cb1e89c2fba",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/e",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "InteractTest",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
