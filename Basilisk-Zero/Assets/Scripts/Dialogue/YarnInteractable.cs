@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Yarn.Unity;
 
 public class YarnInteractable : MonoBehaviour {
@@ -21,15 +22,17 @@ public class YarnInteractable : MonoBehaviour {
         visualCue.SetActive(false);
     }
 
+    /*void OnInteract(InputValue intPress) {
+
+    }*/
+
     private void Update() {
-        if (playerInRange) {
-            if(interactable) {
-                visualCue.SetActive(true);
-            }
+        if (playerInRange && interactable) {
+            visualCue.SetActive(true);
             //Detect when the E arrow key is pressed down
-            if (Input.GetKeyDown(KeyCode.E)) {
+            if (Input.GetButtonUp("Fire1")) {
                 //Debug.Log("E key was pressed.");
-                if (interactable && !dialogueRunner.IsDialogueRunning) {
+                if (!dialogueRunner.IsDialogueRunning) {
                     StartConversation();
                 }
             }
