@@ -1,0 +1,28 @@
+title: DawnStart
+tags:
+colorID: 0
+position: 782,169
+---
+<<declare $supportAI = 0 as number>>
+<<set $name to "Dawn">>
+Dawn: Hey newbie! My name's Dawn.
+Dawn: Do you think you can help me out real quick?
+-> Sure thing!
+    Dawn: Thanks so much!
+    Dawn: Ok I just need you to help me with this logic file.
+    <<set $supportAI to 10>>
+    <<jump DawnAssistanceEnding>>
+-> Sorry, I'm busy at the moment.
+    Dawn: That's ok.
+    Dawn: You probably have a lot on your plate.
+    <<jump DawnAssistanceEnding>>
+===
+title: DawnAssistanceEnding
+position: 782,391
+---
+<<if $supportAI > 0>>
+    Dawn: Thanks for helping me today.
+<<endif>>
+Dawn: It was nice meeting you anyway.
+<<disable Dawn>>
+===
