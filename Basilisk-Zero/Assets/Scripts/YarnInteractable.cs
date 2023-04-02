@@ -35,7 +35,7 @@ public class YarnInteractable : MonoBehaviour {
     }
 
     private void StartConversation() {
-        Debug.Log($"Started conversation with {name}.");
+        //Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
         // if (lightIndicatorObject != null) {
         //     lightIndicatorObject.intensity = defaultIndicatorIntensity;
@@ -49,11 +49,11 @@ public class YarnInteractable : MonoBehaviour {
             //     lightIndicatorObject.intensity = 0;
             // }
             isCurrentConversation = false;
-            Debug.Log($"Started conversation with {name}.");
+            //Debug.Log($"Started conversation with {name}.");
         }
     }
 
-//    [YarnCommand("disable")]
+    [YarnCommand("disable")]
     public void DisableConversation() {
         interactable = false;
     }

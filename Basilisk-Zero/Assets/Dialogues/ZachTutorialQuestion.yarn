@@ -3,25 +3,27 @@ tags:
 colorID: 0
 position: 782,169
 ---
-Zach: Hey my name's Zach nice to meet you!
+<<declare $derailment = 0 as number>>
+<<declare $name = "" as string>>
+Hey my name's Zach nice to meet you!
 <<set $name to "Zach">>
 Zach: Do you want to work on the tutorials?
--> Yes
-   <<jump work>>
--> No
-   <<jump slacker>>
+-> Yes I have to
+   Zach: Okay good luck! It's going to be a slug.
+   <<jump ZachTutorialEnding>>
+-> Nah those are lame
+   Zach: Hell Yea, let's play some games to pass the time!
+   <<set $derailment to 10>>
+   <<jump ZachTutorialEnding>>
 ===
-title: work
-tags: 
+title: ZachTutorialEnding
+tags:
 colorID: 0
-position: 624,473
+position: 784,408
 ---
-Zach: Okay good luck it's going to be a slug.
-===
-title: slacker
-tags: 
-colorID: 0
-position: 999,471
----
-Zach: Hell Yea, let's play some games to pass the time!
+<<if $derailment > 0>>
+   Zach: This company sucks am I right?
+<<endif>>
+Zach: Well I have to get back to work.
+<<disable Zach>>
 ===
