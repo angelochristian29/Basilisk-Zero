@@ -7,13 +7,15 @@ public class AreaExit : MonoBehaviour
 {
     [SerializeField] private GameObject visualCue;
     [SerializeField] string sceneToLoad;
+    [SerializeField] string transitionAreaName;
+    [SerializeField] AreaEnter areaEnter;
 
     private bool playerInRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        areaEnter.transitionAreaName = transitionAreaName;
     }
 
     private void Awake() {
@@ -27,6 +29,7 @@ public class AreaExit : MonoBehaviour
         if (playerInRange) {
             visualCue.SetActive(true);
             if (Input.GetButtonUp("Fire1")) {
+                PlayerController.instance.transitionName = transitionAreaName;
                 SceneManager.LoadScene(sceneToLoad);
             }
         } else {
