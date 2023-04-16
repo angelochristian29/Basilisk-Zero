@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class PlayerController : MonoBehaviour
     public float movSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movFilter;
+    public string transitionName;
+
+    private Vector3 bottomLeftEdge;
+    private Vector3 topRightEdge;
+
+    [SerializeField] Tilemap tilemap;
 
     Vector2 movInput;
     SpriteRenderer spriteRend;
@@ -31,6 +38,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         DontDestroyOnLoad(gameObject);
+
+        bottomLeftEdge = tilemap.localBounds.min + new Vector3(1.5f, 1.5f, 0);
+        topRightEdge = tilemap.localBounds.max + new Vector3(-1.5f, -1.5f, 0);
     }
 
     
@@ -38,6 +48,8 @@ public class PlayerController : MonoBehaviour
         float horizMov = Input.GetAxisRaw("Horizontal");
         float vertMov = Input.GetAxisRaw("Vertical");
         
+        //playerRB.velocity = new Vector2(horizMov, vertMov) * movSpeed;
+
         if (horizMov == 1 || horizMov == -1 || vertMov == 1 || vertMov == -1) {
             
             animator.SetBool("isMoving", true);
@@ -53,8 +65,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
 
-        //playerRB.velocity = new Vector2(horizMov, vertMov) * movSpeed;
+        
         playerRB.MovePosition(playerRB.position + movSpeed * Time.fixedDeltaTime * movInput);
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, bottomLeftEdge.x, topRightEdge.x),
+            Mathf.Clamp(transform.position.y, bottomLeftEdge.y, topRightEdge.y),
+            Mathf.Clamp(transform.position.z, bottomLeftEdge.z, topRightEdge.z)
+        );
     }
 
     /*
