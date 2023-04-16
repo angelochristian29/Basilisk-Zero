@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     public float movSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movFilter;
@@ -19,11 +21,43 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+        }
+        else {
+            instance = this;
+        }
         playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        DontDestroyOnLoad(gameObject);
     }
 
+    
+    private void Update() {
+        float horizMov = Input.GetAxisRaw("Horizontal");
+        float vertMov = Input.GetAxisRaw("Vertical");
+        
+        if (horizMov == 1 || horizMov == -1 || vertMov == 1 || vertMov == -1) {
+            
+            animator.SetBool("isMoving", true);
+            // Flip x direction depending on input
+            if (movInput.x < 0)
+            {
+                spriteRend.flipX = true;
+            } else if (movInput.x > 0) {
+                spriteRend.flipX = false;
+            }
+
+        } else {
+            animator.SetBool("isMoving", false);
+        }
+
+        //playerRB.velocity = new Vector2(horizMov, vertMov) * movSpeed;
+        playerRB.MovePosition(playerRB.position + movSpeed * Time.fixedDeltaTime * movInput);
+    }
+
+    /*
     // For handling player input
     private void FixedUpdate()
     {
@@ -79,7 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-    }
+    }*/
 
     void OnMove(InputValue movVal)
     {
