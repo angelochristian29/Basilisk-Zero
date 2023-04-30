@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 
 public class InkDialogueTrigger : MonoBehaviour
 {
-    // internal properties exposed to editor
-    [SerializeField] private string conversationStartNode;
-
-    // internal properties not exposed to editor
-    //private bool interactable = true;
     private bool isCurrentConversation = false;
 
     [Header("Visual Cue")]

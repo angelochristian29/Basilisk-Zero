@@ -51,7 +51,7 @@ public class InkDialogueManager : MonoBehaviour
         if (!dialogueIsPlaying)
             return;
         
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") | Input.GetButtonUp("Submit"))
         {
             ContinueStory();
         }

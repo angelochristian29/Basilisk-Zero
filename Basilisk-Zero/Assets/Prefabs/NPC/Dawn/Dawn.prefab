@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 912522765529216304}
   - component: {fileID: 1472202980592989390}
   - component: {fileID: 5657577411493648986}
-  - component: {fileID: 2604659999465095571}
+  - component: {fileID: 34287346}
   m_Layer: 0
   m_Name: Dawn
   m_TagString: Untagged
@@ -246,7 +246,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1010838, y: 0.55316305}
   m_EdgeRadius: 0
---- !u!114 &2604659999465095571
+--- !u!114 &34287346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6065113971343660292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c6ff5c95fa454886bd32fb72332d5c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2246ffef3cea23e48b6f80949ff1e8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversationStartNode: DawnStart
   visualCue: {fileID: 1675655768534538567}
+  inkJSON: {fileID: 4900000, guid: e6ebccb6be0491d45b740fbd428e872b, type: 3}
