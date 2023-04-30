@@ -38,20 +38,20 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         DontDestroyOnLoad(gameObject);
-
         bottomLeftEdge = tilemap.localBounds.min + new Vector3(1.5f, 1.5f, 0);
         topRightEdge = tilemap.localBounds.max + new Vector3(-1.5f, -1.5f, 0);
     }
 
     
     private void Update() {
+        // Get player input
         float horizMov = Input.GetAxisRaw("Horizontal");
         float vertMov = Input.GetAxisRaw("Vertical");
         
         //playerRB.velocity = new Vector2(horizMov, vertMov) * movSpeed;
-
+        // Cast a ray to see if player collides with anything
         if (horizMov == 1 || horizMov == -1 || vertMov == 1 || vertMov == -1) {
-            
+            // Check to see if player collides with anything
             animator.SetBool("isMoving", true);
             // Flip x direction depending on input
             if (movInput.x < 0)
