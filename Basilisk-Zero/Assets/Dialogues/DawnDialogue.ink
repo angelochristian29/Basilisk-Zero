@@ -1,0 +1,2 @@
+﻿VAR supportAI = 0
+
