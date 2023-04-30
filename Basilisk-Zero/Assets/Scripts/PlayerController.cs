@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
     
     private void Update() {
+        // Stop player movement if in dialogue
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying) {
+            return;
+        }
+
         float horizMov = Input.GetAxisRaw("Horizontal");
         float vertMov = Input.GetAxisRaw("Vertical");
         
