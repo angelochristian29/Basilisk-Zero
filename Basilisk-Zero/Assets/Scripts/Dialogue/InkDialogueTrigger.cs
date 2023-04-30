@@ -26,7 +26,7 @@ public class InkDialogueTrigger : MonoBehaviour
     private void Update() {
         if (playerInRange && !InkDialogueManager.GetInstance().dialogueIsPlaying) {
             visualCue.SetActive(true);
-            //Detect when the E arrow key is pressed down
+            //Detect when the E key is pressed down
             if (Input.GetButtonUp("Fire1")) {
                 InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }

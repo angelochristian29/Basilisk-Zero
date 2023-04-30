@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
+    public bool deactivateMovement;
     public float movSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movFilter;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update() {
         // Stop player movement if in dialogue
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying) {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
             return;
         }
 
