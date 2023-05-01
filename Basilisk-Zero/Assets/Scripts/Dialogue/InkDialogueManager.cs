@@ -16,6 +16,7 @@ public class InkDialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
+    // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
     private static InkDialogueManager instance;
 
