@@ -7,13 +7,16 @@ public class ItemManager : MonoBehaviour
     private bool playerInRange;
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
-
+    
     public enum ItemType {Item, Key}
     public ItemType itemType;
 
     public string itemName, itemDescription;
     public Sprite itemImage;
     public int clearanceLvl;
+
+    public bool isStackable;
+    public int amt = 1;
 
     private void Awake()
     {
