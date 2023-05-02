@@ -15,6 +15,9 @@ public class ItemManager : MonoBehaviour
     public Sprite itemImage;
     public int clearanceLvl;
 
+    public bool isStackable;
+    public int amt = 0;
+
     private void Awake()
     {
         playerInRange = false;

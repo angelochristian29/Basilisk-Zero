@@ -6,20 +6,15 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
     private List<ItemManager> itemsList;
-
-    private void Awake()
+    
+    // Start is called before the first frame update
+    void Start()
     {
         if (instance != null)
         {
             Debug.LogWarning("More than one instance in scene.");
         }
         instance = this;
-    }
-
-    
-    // Start is called before the first frame update
-    void Start()
-    {
         itemsList = new List<ItemManager>();
     }
 
@@ -29,10 +24,31 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public List<ItemManager> GetItems() 
+    {
+        return itemsList;
+    }
+
     public void AddItems(ItemManager item)
     {
-        print(item.itemName + "has been added to inventory");
-        itemsList.Add(item);
-        print(itemsList.Count);
+        if (item.isStackable)
+        {
+            bool itemAlreadyInInventory = false;
+            foreach (ItemManager itemInInventory in itemsList)
+            {
+                if (itemInInventory.itemName == item.itemName)
+                {
+                    itemInInventory.amt += item.amt;
+                    itemAlreadyInInventory = true;
+                }
+            }
+
+            if (!itemAlreadyInInventory)
+            {
+                itemsList.Add(item);
+            }
+        } else {
+            itemsList.Add(item);
+        }
     }
 }
