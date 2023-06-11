@@ -8,7 +8,7 @@ public class AreaEnter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (transitionAreaName.CompareTo(PlayerController.instance.transitionName) < 0) {
+        if (transitionAreaName.CompareTo(PlayerController.instance.transitionName) == 0) {
             PlayerController.instance.transform.position = transform.position;
         }
     }

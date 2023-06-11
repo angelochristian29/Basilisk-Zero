@@ -16,27 +16,29 @@ public class NPCMovement : MonoBehaviour
     private float timeSinceLastMove;
 
     private void Update() {
-       if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
             return;
         }
-        else {
-            if (timeSinceLastMove >= moveDelay) {
+
+        if (timeSinceLastMove >= moveDelay) {
             // Calculate a new movement direction
             movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             // Reset the time since last move
             timeSinceLastMove = 0f;
-            } 
-            else {
+        } 
+        else {
             // Increment the time since last move
             timeSinceLastMove += Time.deltaTime;
-            }
+        }
         // Move the NPC based on the movement direction and speed
         transform.position += new Vector3(movement.x, movement.y, 0f) * speed * Time.deltaTime;
-        }
     }
         
 
     public void Move() {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+            return;
+        }
         // generate a random direction
         float x = Random.Range(-1f, 1f);
         float y = Random.Range(-1f, 1f);
