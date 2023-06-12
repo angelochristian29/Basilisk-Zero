@@ -3,7 +3,9 @@
 -> DawnAssistance
 
 === DawnAssistance ===
-Hey newbie! My name's Dawn. # speaker:Dawn
+#speaker:Dawn
+#portrait:DawnNeutral
+Hey newbie! My name's Dawn.
 Do you think you can help me out real quick?
     * [Sure thing!]
         Thanks so much!
