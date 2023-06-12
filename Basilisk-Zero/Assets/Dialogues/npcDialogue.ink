@@ -1,6 +1,8 @@
 -> npcGreetings
 
 === npcGreetings ===
+#speaker:Joe
+#portrait:DawnNeutral
 Hey there, how's it going? 
 Good morning, how are you today?
     * [Doing good]

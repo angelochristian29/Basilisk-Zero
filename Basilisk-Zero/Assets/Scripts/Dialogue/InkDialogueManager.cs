@@ -11,6 +11,9 @@ public class InkDialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
+    
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
@@ -19,6 +22,9 @@ public class InkDialogueManager : MonoBehaviour
     // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
     private static InkDialogueManager instance;
+
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
 
     private void Awake()
     {
@@ -64,6 +70,9 @@ public class InkDialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        // reset dialogue tags
+        displayNameText.text = "???";
+        portraitAnimator.Play("default");
         ContinueStory();
     }
 
@@ -82,8 +91,37 @@ public class InkDialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
+            HandleTags(currentStory.currentTags); // code for handling tags
         } else {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    // Parses each tag in an ink file and appropiately changes aspects in the dialogue bubbles
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags) 
+        {
+            // Split tag that looks like 'speaker:Dawn' for example
+            string[] splitTag = tag.Split(":");
+            if  (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag was not properly parsed: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.LogError("Tag is not the kind that is being handled: " + tag);
+                    break;
+            }
         }
     }
 

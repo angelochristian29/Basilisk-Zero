@@ -3,7 +3,9 @@
 -> ZachTutorial
 
 === ZachTutorial ===
-Hey my name's Zach nice to meet you! # speaker: Zach
+#speaker:Zach
+#portrait:ZachNeutral
+Hey my name's Zach nice to meet you!
 Do you want to work on the tutorials?
     * [Yes I have to]
         Okay good luck! It's going to be a slug.
