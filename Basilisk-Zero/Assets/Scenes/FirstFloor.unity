@@ -33192,6 +33192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 105892504}
     m_Modifications:
+    - target: {fileID: 8362099398744689861, guid: 34d938eb06d940b4fb675e2128b34207, type: 3}
+      propertyPath: itemName
+      value: Level_2_Keycard
+      objectReference: {fileID: 0}
     - target: {fileID: 8362099398744689862, guid: 34d938eb06d940b4fb675e2128b34207, type: 3}
       propertyPath: m_RootOrder
       value: 0

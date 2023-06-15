@@ -16,6 +16,8 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
         itemsList = new List<ItemManager>();
+       
+
     }
 
     // Update is called once per frame
@@ -50,5 +52,22 @@ public class Inventory : MonoBehaviour
         } else {
             itemsList.Add(item);
         }
+    }
+    public bool isInInventory(string itemName){
+        //This method will check the inventory for a specific item
+        //If the item is in the inventory, it will return true
+        //If the item is not in the inventory, it will return false
+        //This method will be used to check if the player has the keycard
+        //If the player has the keycard, they can enter the elevator
+       
+    foreach (ItemManager itemInInventory in itemsList)
+            {
+                if (itemInInventory.itemName == itemName)
+                {
+                    
+                      return true;
+                }
+            }
+            return false;
     }
 }
