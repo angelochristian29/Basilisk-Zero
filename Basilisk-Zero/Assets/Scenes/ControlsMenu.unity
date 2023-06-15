@@ -384,7 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstFloor: 
-  SettingsMenu: {fileID: 0}
+  Title: 
+  ControlsMenu: 
 --- !u!1 &492669216
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +605,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1232436761}
+      - m_Target: {fileID: 1232436762}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -766,9 +767,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1232436763}
   - component: {fileID: 1232436762}
-  - component: {fileID: 1232436761}
-  - component: {fileID: 1232436760}
-  - component: {fileID: 1232436759}
   m_Layer: 5
   m_Name: ControlsMenu
   m_TagString: Untagged
@@ -776,46 +774,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1232436759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232436758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a9c2081b19b4649a8b9e700a960db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirstFloor: 
-  SettingsMenu: {fileID: 0}
---- !u!114 &1232436760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232436758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96487061617760246b0b5a8b59cf05bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1232436761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232436758}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a9c2081b19b4649a8b9e700a960db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirstFloor: 
-  SettingsMenu: {fileID: 0}
 --- !u!114 &1232436762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstFloor: 
-  SettingsMenu: {fileID: 0}
+  Title: 
+  ControlsMenu: 
 --- !u!224 &1232436763
 RectTransform:
   m_ObjectHideFlags: 0

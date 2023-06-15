@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
+    public bool deactivateMovement;
     public float movSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movFilter;
@@ -45,6 +46,11 @@ public class PlayerController : MonoBehaviour
 
     
     private void Update() {
+        // Stop player movement if in dialogue
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+            return;
+        }
+
         float horizMov = Input.GetAxisRaw("Horizontal");
         float vertMov = Input.GetAxisRaw("Vertical");
         
@@ -75,63 +81,6 @@ public class PlayerController : MonoBehaviour
         );
     }
 
-    /*
-    // For handling player input
-    private void FixedUpdate()
-    {
-        if (movInput != Vector2.zero)
-        {
-            bool tryMov = CastMove(movInput);
-
-            // try moving only on x axis
-            if (!tryMov)
-            {
-                tryMov = CastMove(new Vector2(movInput.x, 0));
-            }
-
-            // try moving only on y axis
-            if (!tryMov)
-            {
-                tryMov = CastMove(new Vector2(0, movInput.y));
-            }
-
-            animator.SetBool("isMoving", tryMov);
-        } else
-        {
-            animator.SetBool("isMoving", false);
-        }
-
-        // Flip x direction depending on input
-        if (movInput.x < 0)
-        {
-            spriteRend.flipX = true;
-        } else if (movInput.x > 0) {
-            spriteRend.flipX = false;
-        }
-    }
-
-    private bool CastMove(Vector2 dir)
-    {
-        if (dir == Vector2.zero)
-        {
-            return false;
-        }
-            // Checks to see if player collides with anything
-        int colCount = playerRB.Cast(
-            dir,
-            movFilter, 
-            castCollisions, 
-            movSpeed * Time.fixedDeltaTime + collisionOffset);
-
-        if (colCount == 0)
-        {
-            playerRB.MovePosition(playerRB.position + movSpeed * Time.fixedDeltaTime * dir);
-            return true;
-        } else
-        {
-            return false;
-        }
-    }*/
 
     void OnMove(InputValue movVal)
     {
