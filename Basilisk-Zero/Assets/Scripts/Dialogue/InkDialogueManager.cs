@@ -5,9 +5,13 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using Ink.UnityIntegration;
 
 public class InkDialogueManager : MonoBehaviour
 {
+    [Header("Globals Ink File")]
+    [SerializeField] private InkFile globalsInkFile;
+    
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -26,6 +30,8 @@ public class InkDialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
 
+    private InkDialogueVariables dialogueVariables;
+
     private void Awake()
     {
         if (instance != null)
@@ -33,6 +39,8 @@ public class InkDialogueManager : MonoBehaviour
             Debug.LogWarning("More than one instance in scene.");
         }
         instance = this;
+
+        dialogueVariables = new InkDialogueVariables(globalsInkFile.filePath);
     }
 
     public static InkDialogueManager GetInstance()
@@ -70,6 +78,8 @@ public class InkDialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
         // reset dialogue tags
         displayNameText.text = "???";
         portraitAnimator.Play("default");
@@ -79,6 +89,9 @@ public class InkDialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+
+        dialogueVariables.StopListening(currentStory);
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -165,5 +178,16 @@ public class InkDialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+    }
+    
+    public Ink.Runtime.Object GetVariableState(string variableName)
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null)
+        {
+            Debug.Log("Ink Variable was null: " + variableName);
+        }
+        return variableValue;
     }
 }
