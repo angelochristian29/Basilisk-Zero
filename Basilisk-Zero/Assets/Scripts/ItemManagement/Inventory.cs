@@ -57,17 +57,15 @@ public class Inventory : MonoBehaviour
         //This method will check the inventory for a specific item
         //If the item is in the inventory, it will return true
         //If the item is not in the inventory, it will return false
-        //This method will be used to check if the player has the keycard
-        //If the player has the keycard, they can enter the elevator
        
-    foreach (ItemManager itemInInventory in itemsList)
+        foreach (ItemManager itemInInventory in itemsList)
+        {
+            if (itemInInventory.itemName == itemName)
             {
-                if (itemInInventory.itemName == itemName)
-                {
-                    
-                      return true;
-                }
+                
+                    return true;
             }
-            return false;
+        }
+        return false;
     }
 }
