@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461034255e348746843a7f13a193eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactivateMovement: 0
   movSpeed: 2.5
   collisionOffset: 0.02
   movFilter:
@@ -147,7 +148,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  transitionName: 
+  transitionName: Elevator - 1
+  tilemap: {fileID: 0}
 --- !u!50 &-3990964868395457864
 Rigidbody2D:
   serializedVersion: 4

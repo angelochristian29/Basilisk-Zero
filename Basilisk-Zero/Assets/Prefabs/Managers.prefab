@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606de61f540326046a06736774124276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadGlobalsJSON: {fileID: 4900000, guid: 9b467724055b3d54ba0a873cabec99ae, type: 3}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   displayNameText: {fileID: 0}
