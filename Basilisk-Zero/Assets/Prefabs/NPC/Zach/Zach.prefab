@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2068560605
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 288473070, guid: 767a234836c49d948ab60f2efa52664a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246ffef3cea23e48b6f80949ff1e8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversationStartNode: 
   visualCue: {fileID: 7304738798930154546}
   inkJSON: {fileID: 4900000, guid: 254fc120980d2b141927ce52d41adebe, type: 3}
 --- !u!1 &7304738798930154546

@@ -5,12 +5,11 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using Ink.UnityIntegration;
 
 public class InkDialogueManager : MonoBehaviour
 {
-    [Header("Globals Ink File")]
-    [SerializeField] private InkFile globalsInkFile;
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
     
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -40,7 +39,7 @@ public class InkDialogueManager : MonoBehaviour
         }
         instance = this;
 
-        dialogueVariables = new InkDialogueVariables(globalsInkFile.filePath);
+        dialogueVariables = new InkDialogueVariables(loadGlobalsJSON);
     }
 
     public static InkDialogueManager GetInstance()

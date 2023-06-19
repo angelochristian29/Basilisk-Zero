@@ -33002,10 +33002,6 @@ PrefabInstance:
       propertyPath: choices.Array.data[1]
       value: 
       objectReference: {fileID: 1706595883}
-    - target: {fileID: 3068300676649761122, guid: 2b8d23f584f490f46a855460b548c1d1, type: 3}
-      propertyPath: globalsInkFile.inkAsset
-      value: 
-      objectReference: {fileID: 102900000, guid: 05c5ab84e7983dc4388d7951125bbe92, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b8d23f584f490f46a855460b548c1d1, type: 3}
 --- !u!1001 &3263952698370314484
@@ -33100,10 +33096,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1252158956579710586, guid: c3f170aa76667b64da2c9138273591da, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2103913317376721571, guid: c3f170aa76667b64da2c9138273591da, type: 3}
       propertyPath: m_Name
       value: player
@@ -33156,10 +33148,6 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 475697187}
-    - target: {fileID: 8339191869690345858, guid: c3f170aa76667b64da2c9138273591da, type: 3}
-      propertyPath: transitionName
-      value: Elevator - 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3f170aa76667b64da2c9138273591da, type: 3}
 --- !u!1001 &7295752517923709624

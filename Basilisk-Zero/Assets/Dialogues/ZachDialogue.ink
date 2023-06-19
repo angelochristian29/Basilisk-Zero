@@ -1,10 +1,9 @@
 ﻿INCLUDE globals.ink
 
-{ derailment == 0: -> ZachTutorial | -> ZachTutorialEnding }
-
-=== ZachTutorial ===
 #speaker:Zach
 #portrait:ZachNeutral
+{ derailment == 0: -> ZachTutorial | -> ZachTutorialEnding }
+=== ZachTutorial ===
 Hey my name's Zach nice to meet you!
 Do you want to work on the tutorials?
     * [Yes I have to]
@@ -17,12 +16,10 @@ Do you want to work on the tutorials?
         -> ZachTutorialEnding
 
 === ZachTutorialEnding ===
-#speaker:Zach
-#portrait:ZachNeutral
 {derailment > 0:
     This company sucks am I right?
 - else:
     Well I have to get back to work.
 }
--> END
 
+-> END

@@ -8,12 +8,10 @@ public class InkDialogueVariables
 {
     public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
 
-    public InkDialogueVariables(string globalsFilePath)
+    public InkDialogueVariables(TextAsset loadGlobalsJSON)
     {
-        // compile story using Ink's built in compiler
-        string inkFileContents = File.ReadAllText(globalsFilePath);
-        Ink.Compiler compiler = new Ink.Compiler(inkFileContents);
-        Story globalVariablesStory = compiler.Compile();
+        // creates a new story from the TextAsset
+        Story globalVariablesStory = new Story(loadGlobalsJSON.text);
 
         // assign each variable to the dictionary
         variables = new Dictionary<string, Ink.Runtime.Object>();
