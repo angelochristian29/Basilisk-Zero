@@ -8,11 +8,15 @@ using UnityEngine.EventSystems;
 
 public class InkDialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField] private float textSpeed = 0.04f;
+
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
     
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private Animator portraitAnimator;
@@ -24,6 +28,8 @@ public class InkDialogueManager : MonoBehaviour
     private Story currentStory;
     // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
+    private bool canContinueLine = false;
+    private Coroutine displayLineCoroutine;
     private static InkDialogueManager instance;
 
     private const string SPEAKER_TAG = "speaker";
@@ -65,7 +71,7 @@ public class InkDialogueManager : MonoBehaviour
         if (!dialogueIsPlaying)
             return;
         
-        if (Input.GetButtonUp("Fire1") | Input.GetButtonUp("Submit"))
+        if (canContinueLine && currentStory.currentChoices.Count == 0 && Input.GetButtonUp("Submit"))
         {
             ContinueStory();
         }
@@ -101,11 +107,52 @@ public class InkDialogueManager : MonoBehaviour
         // Next line the dialogue
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
-            DisplayChoices();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             HandleTags(currentStory.currentTags); // code for handling tags
         } else {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // Reset text box and hide UI elements
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
+        continueIcon.SetActive(false);
+        HideChoices();
+        
+        canContinueLine = false;
+        
+        foreach (char letter in line.ToCharArray())
+        {
+            // If "Enter" button pressed then display whole line
+            if (Input.GetButtonUp("Submit"))
+            {
+                dialogueText.maxVisibleCharacters = line.Length;
+                break;
+            }
+
+            dialogueText.maxVisibleCharacters += 1;
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+        // Make dialogue able to display next line
+        continueIcon.SetActive(true);
+        DisplayChoices();
+
+        canContinueLine = true;
+    }
+
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -176,7 +223,12 @@ public class InkDialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
+        
     }
     
     public Ink.Runtime.Object GetVariableState(string variableName)
