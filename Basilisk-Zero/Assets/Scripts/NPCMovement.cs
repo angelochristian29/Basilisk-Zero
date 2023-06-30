@@ -1,41 +1,90 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class NPCMovement : MonoBehaviour
 {
      // Speed of the NPC
     [SerializeField] private float speed = 2f;
-    
+
     // Time between movements
-    [SerializeField] private float moveDelay = 1f;
+    [SerializeField] public float waitTime = 3f;
+    [SerializeField] public float walkTime = 1f;
 
     // Internal variables
     private Vector2 movement;
     private float timeSinceLastMove;
 
-    private void Update() {
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+    private Rigidbody2D rb;
+    public bool isMoving;
+    private float walkCounter;
+    private float waitCounter;
+
+    // Directions
+    private int walkDirection;
+    
+    public void Start() 
+    {
+        rb = GetComponent<Rigidbody2D>();
+        waitCounter = waitTime;
+        walkCounter =  walkTime;
+
+        ChooseDirection();
+    }
+
+    private void Update()
+    {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
+        {
             return;
         }
 
-        if (timeSinceLastMove >= moveDelay) {
-            // Calculate a new movement direction
-            movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-            // Reset the time since last move
-            timeSinceLastMove = 0f;
-        } 
-        else {
-            // Increment the time since last move
-            timeSinceLastMove += Time.deltaTime;
-        }
-        // Move the NPC based on the movement direction and speed
-        transform.position += new Vector3(movement.x, movement.y, 0f) * speed * Time.deltaTime;
-    }
-        
+        moveNPC();
 
-    public void Move() {
+    }
+
+    private void moveNPC()
+    {
+        if (isMoving)
+        {
+            walkCounter -= Time.deltaTime;
+
+            switch (walkDirection)
+            {
+                case 0:
+                    rb.velocity = new Vector2(0, speed);
+                    break;
+                case 1:
+                    rb.velocity = new Vector2(speed, 0);
+                    break;
+                case 2:
+                    rb.velocity = new Vector2(0, -speed);
+                    break;
+                case 3:
+                    rb.velocity = new Vector2(-speed, 0);
+                    break;
+                default:
+                    break;
+            }
+
+            if (walkCounter < 0)
+            {
+                isMoving = false;
+                waitCounter = waitTime;
+            }
+
+        }
+        else
+        {
+            waitCounter -= Time.deltaTime;
+            rb.velocity = Vector2.zero;
+            
+            if (waitCounter < 0)
+            {
+                ChooseDirection();
+            }
+        }
+    }
+
+    /*public void Move() {
         if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
             return;
         }
@@ -46,12 +95,13 @@ public class NPCMovement : MonoBehaviour
         Vector2 direction = new Vector2(x, y).normalized;
         // move the object in the direction
         transform.Translate(direction * speed * Time.deltaTime);
-    }
+    }*/
 
-    public void Start() 
+    public void ChooseDirection()
     {
-        movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-        timeSinceLastMove = 0f;
+        walkDirection = Random.Range(0,4);
+        isMoving = true;
+        walkCounter = walkTime;
     }
 
 }

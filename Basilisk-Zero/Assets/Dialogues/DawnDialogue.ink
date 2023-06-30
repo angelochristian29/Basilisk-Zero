@@ -1,14 +1,15 @@
 ﻿INCLUDE globals.ink
 
-#speaker:Dawn
-#portrait:DawnNeutral
 { supportAI == 0: -> DawnAssistance | -> DawnAssistanceEnding }
 === DawnAssistance ===
+#speaker:Dawn
+#portrait:DawnNeutral
 Hey newbie! My name's Dawn.
 Do you think you can help me out real quick?
     * { derailment < 10 } [Sure thing!]
         Thanks so much!
         Ok I just need you to help me with this logic file.
+        Thanks for helping me today!
         ~ supportAI = supportAI + 10
         -> DawnAssistanceEnding
     * [Sorry, I'm busy at the moment.]
@@ -18,10 +19,7 @@ Do you think you can help me out real quick?
         -> DawnAssistanceEnding
 
 === DawnAssistanceEnding ===
-{supportAI > 0:
-    Thanks for helping me today.
-- else:
-    It was nice meeting you anyway.
-}
-
+#speaker:Dawn
+#portrait:DawnNeutral
+It was nice meeting you anyway.
 -> END
