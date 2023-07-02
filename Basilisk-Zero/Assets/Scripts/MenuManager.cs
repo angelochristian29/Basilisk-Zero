@@ -26,10 +26,17 @@ public class MenuManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+        }
+        else {
+            instance = this;
+        }
+        
         menuIsOpen = false;
-        instance = this;
         menu.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

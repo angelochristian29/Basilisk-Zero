@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1472202980592989390}
   - component: {fileID: 5657577411493648986}
   - component: {fileID: 34287346}
-  - component: {fileID: 1336874100}
+  - component: {fileID: 3343667705278058436}
   m_Layer: 0
   m_Name: Dawn
   m_TagString: Untagged
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1675655768534538567}
   inkJSON: {fileID: 4900000, guid: a246f1700156ef94ca7402ef2f05f114, type: 3}
---- !u!114 &1336874100
+--- !u!114 &3343667705278058436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,5 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3971c00badc17b4da14f44a23fb7171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  moveDelay: 1
+  speed: 2
+  waitTime: 3
+  walkTime: 1
+  isMoving: 0

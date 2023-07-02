@@ -3,11 +3,11 @@ using UnityEngine;
 public class NPCMovement : MonoBehaviour
 {
      // Speed of the NPC
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 0f;
 
     // Time between movements
     [SerializeField] public float waitTime = 3f;
-    [SerializeField] public float walkTime = 1f;
+    [SerializeField] public float walkTime = 0f;
 
     // Internal variables
     private Vector2 movement;
@@ -32,6 +32,7 @@ public class NPCMovement : MonoBehaviour
 
     private void Update()
     {
+        // dialogueIsPlaying isn't working here
         if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
         {
             return;
@@ -84,18 +85,6 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
-    /*public void Move() {
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
-            return;
-        }
-        // generate a random direction
-        float x = Random.Range(-1f, 1f);
-        float y = Random.Range(-1f, 1f);
-        // normalize the vector so that the sum of the components is equal to 1
-        Vector2 direction = new Vector2(x, y).normalized;
-        // move the object in the direction
-        transform.Translate(direction * speed * Time.deltaTime);
-    }*/
 
     public void ChooseDirection()
     {

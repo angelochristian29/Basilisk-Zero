@@ -54,7 +54,6 @@ public class InkDialogueTrigger : MonoBehaviour
     }
 
     private void StartConversation() {
-        //Debug.Log($"Started conversation with {name}.");
         isCurrentConversation = true;
     }
 
@@ -62,7 +61,6 @@ public class InkDialogueTrigger : MonoBehaviour
         if (isCurrentConversation) {
             visualCue.SetActive(false);
             isCurrentConversation = false;
-            //Debug.Log($"Started conversation with {name}.");
         }
     }
 

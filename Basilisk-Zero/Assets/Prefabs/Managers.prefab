@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3068300675839293483}
+  - component: {fileID: 3898384382241591482}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -77,6 +78,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3898384382241591482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068300675839293480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07627a759c5b9a47963ae92e521ac91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMenuOpened: 0
+  dialogueIsPlaying: 0
 --- !u!1 &3068300676649761120
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,8 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606de61f540326046a06736774124276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textSpeed: 0.08
   loadGlobalsJSON: {fileID: 4900000, guid: 9b467724055b3d54ba0a873cabec99ae, type: 3}
   dialoguePanel: {fileID: 0}
+  continueIcon: {fileID: 0}
   dialogueText: {fileID: 0}
   displayNameText: {fileID: 0}
   portraitAnimator: {fileID: 0}
