@@ -34,7 +34,8 @@ You want to help me mess around on the second floor?
 === ZachDoTutorials ===
 #speaker:Zach
 #portrait:ZachNeutral
-Go to the manager's office.
+Make sure you go to the manager's office.
+Just follow the green floor upwards towards the elevator.
 It's to the right of the elevator, you can't miss it dude.
 Well I have to get back to work.
 -> END

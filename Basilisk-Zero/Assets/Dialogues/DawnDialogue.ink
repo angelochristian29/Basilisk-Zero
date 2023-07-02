@@ -32,5 +32,6 @@ Hey, do you think you can help me one more time?
 #portrait:DawnNeutral
 You should go meet the manager, Nico. He's a nice guy and I think he wanted to see you.
 His office is to the right of the elevator by the way.
+Just follow the green floor upwards towards the elevator.
 It was nice meeting you anyway.
 -> END
