@@ -5,11 +5,12 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InkDialogueManager : MonoBehaviour
 {
     [Header("Params")]
-    [SerializeField] private float textSpeed = 0.04f;
+    [SerializeField] private float textSpeed = 0.16f;
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
@@ -36,16 +37,19 @@ public class InkDialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
 
     private InkDialogueVariables dialogueVariables;
+    private InkExternalFunctions inkExternalFunctions;
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogWarning("More than one instance in scene.");
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
         }
-        instance = this;
+        else {
+            instance = this;
+        }
 
         dialogueVariables = new InkDialogueVariables(loadGlobalsJSON);
+        inkExternalFunctions = new InkExternalFunctions();
     }
 
     public static InkDialogueManager GetInstance()
@@ -84,6 +88,7 @@ public class InkDialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         dialogueVariables.StartListening(currentStory);
+        inkExternalFunctions.Bind(currentStory);
 
         // reset dialogue tags
         displayNameText.text = "???";
@@ -96,6 +101,7 @@ public class InkDialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
+        inkExternalFunctions.Unbind(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -111,8 +117,20 @@ public class InkDialogueManager : MonoBehaviour
             {
                 StopCoroutine(displayLineCoroutine);
             }
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
-            HandleTags(currentStory.currentTags); // code for handling tags
+            string nextLine = currentStory.Continue();
+            // handle case where the Last Line is an external function
+            if (nextLine.Equals("") && !currentStory.canContinue)
+            {
+                StartCoroutine(ExitDialogueMode());
+            }
+            else //Otherwise play story as normal
+            {
+                HandleTags(currentStory.currentTags); // code for handling tags
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            }
+            
+            
+            
         } else {
             StartCoroutine(ExitDialogueMode());
         }

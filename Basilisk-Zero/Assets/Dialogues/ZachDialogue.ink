@@ -5,14 +5,16 @@
 === ZachTutorial ===
 #speaker:Zach
 #portrait:ZachNeutral
-Hey my name's Zach nice to meet you!
-Do you want to work on the tutorials?
-    * [Yes I have to]
-        Okay good luck! It's going to be a slug.
+Hey my name's Zach. Nice to meet you!
+Do you want to get straight to work?
+    * { supportAI >= 0 } [Yes I have to]
+        Talk to Dawn on the desk left of yours.
+        She'll have something for you to do.
+        Good luck! It's going to be a slug.
         ~ derailment = derailment - 10
         -> ZachDoTutorials
-    * { supportAI < 10 } [Nah those are lame]
-        Hell Yea, let's play some games to pass the time!
+    * { supportAI < 10 } [Nah that sounds boring]
+        Hell yea, let's play some games to pass the time!
         ~ derailment = derailment + 10
         -> ZachFirstMission
 
@@ -21,21 +23,18 @@ Do you want to work on the tutorials?
 #portrait:ZachNeutral
 Hey you seem a little rebellious. 
 You want to help me mess around on the second floor?
-    * [Sure, what do I have to do?]
+    * [I'm in! What's the plan?]
         ~ derailment = derailment + 10
         Go grab the red key card for second floor clearance in the managers office. 
         It's to the right of the elevator, you can't miss it dude.
         I'll meet you up there after lunch.
-        -> DONE
-    * [Relax, I'm not trying to lose my job]
-        That's cool but you're missing out my guy.
-        I'll catch up with you after lunch.
         -> DONE
 -> END
 
 === ZachDoTutorials ===
 #speaker:Zach
 #portrait:ZachNeutral
-This company sucks am I right?
+Go to the manager's office.
+It's to the right of the elevator, you can't miss it dude.
 Well I have to get back to work.
 -> END
