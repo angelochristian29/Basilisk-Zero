@@ -239,7 +239,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3329675353007966529, guid: 93c9c815f43841b41ac79fd6f2f23d7c, type: 3}
       propertyPath: transitionAreaName
-      value: Second Floor - 2
+      value: Elevator
       objectReference: {fileID: 0}
     - target: {fileID: 7295752518157738700, guid: 93c9c815f43841b41ac79fd6f2f23d7c, type: 3}
       propertyPath: m_Name
@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7295752518157738703, guid: 93c9c815f43841b41ac79fd6f2f23d7c, type: 3}
       propertyPath: transitionAreaName
-      value: Elevator - 2
+      value: Elevator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c9c815f43841b41ac79fd6f2f23d7c, type: 3}
