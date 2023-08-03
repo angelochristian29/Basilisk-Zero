@@ -9,7 +9,7 @@ public class InkExternalFunctions
     public void Bind(Story story)
     {
         story.BindExternalFunction("chooseLevel", (string levelName, string enterName) => {
-            //Debug.Log(levelName);
+            //Debug.Log(enterName);
             PlayerController.instance.transitionName = enterName;
             SceneManager.LoadScene(levelName);
         });

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 bottomLeftEdge;
     private Vector3 topRightEdge;
-
-    [SerializeField] Tilemap tilemap;
 
     Vector2 movInput;
     SpriteRenderer spriteRend;
@@ -40,8 +37,6 @@ public class PlayerController : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>();
         DontDestroyOnLoad(gameObject);
 
-        bottomLeftEdge = tilemap.localBounds.min + new Vector3(1.5f, 1.5f, 0);
-        topRightEdge = tilemap.localBounds.max + new Vector3(-1.5f, -1.5f, 0);
     }
 
     
@@ -85,5 +80,11 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movVal)
     {
         movInput = movVal.Get<Vector2>();
+    }
+
+    public void SetLimit(Vector3 bottomEdgeToSet, Vector3 topEdgeToSet)
+    {
+        bottomLeftEdge = bottomEdgeToSet;
+        topRightEdge = topEdgeToSet;
     }
 }
