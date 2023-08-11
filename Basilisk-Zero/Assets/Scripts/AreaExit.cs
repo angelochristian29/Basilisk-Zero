@@ -32,7 +32,7 @@ public class AreaExit : MonoBehaviour
         //Check item list for Level 2 Keycard, then allow player to enter elevator
         if (playerInRange) {
             visualCue.SetActive(true);
-            if (Input.GetButtonUp("Fire1") && Inventory.instance.isInInventory("Level_2_Keycard")) {
+            if (Input.GetButtonUp("Fire1") && Inventory.instance.isInInventory("Level 2 Keycard")) {
                 PlayerController.instance.transitionName = transitionAreaName;
                 SceneManager.LoadScene(sceneToLoad);
             }
