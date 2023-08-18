@@ -1,49 +1,10 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Typing : MonoBehaviour
 {
-    public static GameManager instance;
-    public bool gameMenuOpened, dialogueIsPlaying;
-
-    //[SerializeField] 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (instance != null && instance != this) {
-            Destroy(this.gameObject);
-        }
-        else {
-            instance = this;
-        }
-        DontDestroyOnLoad(gameObject);
-
-         _audioSource = GetComponent<AudioSource>();
-        if (_data != null)
-        {
-            _textReader = TextAssetReaderFactory.CreateReader(_data.ResourceType);
-            _wordsQueue = _textReader.ReadFile(_data.WordsFile);
-            typingManager = new TypingManager(GetNextWord());
-            UIManager.instance.UpdateText(typingManager.GetCurrentWord());
-            FindObjectOfType<InputHandler>().AssignOnInputListener(CheckPlayerInput);
-        }
-        else
-        {
-            throw new System.Exception("No data file assigned");
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (gameMenuOpened || dialogueIsPlaying)
-        {
-            
-        }
-
-    }
-
     private enum AudioClipType
     {
         GoodWord = 0,
@@ -61,7 +22,28 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioClip[] _audioClips;
 
-  
+    void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        if (_data != null)
+        {
+            _textReader = TextAssetReaderFactory.CreateReader(_data.ResourceType);
+            _wordsQueue = _textReader.ReadFile(_data.WordsFile);
+            typingManager = new TypingManager(GetNextWord());
+            UIManager.instance.UpdateText(typingManager.GetCurrentWord());
+            FindObjectOfType<InputHandler>().AssignOnInputListener(CheckPlayerInput);
+        }
+        else
+        {
+            throw new System.Exception("No data file assigned");
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     public string GetNextWord()
     {
