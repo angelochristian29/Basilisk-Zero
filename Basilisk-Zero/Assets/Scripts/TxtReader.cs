@@ -16,7 +16,7 @@ public class TxtReader : ITextAssetReader
     private Queue<string> PrepareWords(string[] words)
     {
 
-        List<string> wordsMax4Letters = words.Where(word => word.Length < 4).ToList();
+        List<string> wordsMax4Letters = words.Where(word => word.Length > 1).ToList();
         wordsMax4Letters = ShuffleList(wordsMax4Letters);
         return new Queue<string>(wordsMax4Letters);
     }

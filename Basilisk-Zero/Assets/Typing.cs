@@ -22,6 +22,8 @@ public class Typing : MonoBehaviour
     [SerializeField]
     private AudioClip[] _audioClips;
 
+    [SerializeField]
+    private GameObject typingCanvas;
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -45,9 +47,20 @@ public class Typing : MonoBehaviour
         
     }
 
+    
     public string GetNextWord()
     {
-        return _wordsQueue.Dequeue();
+        if(_wordsQueue.Count == 0){
+            Debug.Log("All words completed") ;
+           // typingCanvas.SetActive(false);
+            Destroy(typingCanvas);
+            OpenTypingGame.instance.gameIsPlaying = false;
+            return "";
+        }
+        else{
+            return _wordsQueue.Dequeue();
+        }
+        
     }
 
     public void CheckPlayerInput(char c)

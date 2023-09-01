@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 352467492841104776}
   - component: {fileID: 352467492841104781}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: typing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09c871bc813e2b846b26ef1ff0b5c8a7, type: 3}
   - {fileID: 8300000, guid: f24c1991ece6ed6479434d6f41301b08, type: 3}
   - {fileID: 8300000, guid: 745d0200d781a244f86b98b959ea7955, type: 3}
+  typingCanvas: {fileID: 0}
 --- !u!114 &352467492841104776
 MonoBehaviour:
   m_ObjectHideFlags: 0
