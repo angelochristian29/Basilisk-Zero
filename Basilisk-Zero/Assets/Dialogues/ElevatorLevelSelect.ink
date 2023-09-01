@@ -3,9 +3,9 @@
 
 Which level would you like to go to?
     + [First Floor]
-        ~ chooseLevel("FirstFloor", "First Floor - 1")
+        ~ chooseLevel("FirstFloor", "Elevator")
         -> END
     
     + [Second Level]
-        ~ chooseLevel("SecondFloor", "Second Floor - 2")
+        ~ chooseLevel("SecondFloor", "Elevator")
         -> END

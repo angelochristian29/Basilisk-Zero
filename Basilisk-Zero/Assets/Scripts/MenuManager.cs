@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -14,10 +15,16 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject itemSlotContainer;
     [SerializeField] Transform itemSlotContainerParent;
+    [SerializeField] GameObject mapContainer;
 
     public TextMeshProUGUI itemName, itemDescription;
 
     public bool menuIsOpen { get; private set; }
+    
+    private Scene currentScene;
+    private string sceneName;
+    [SerializeField] private Sprite f1Map;
+    [SerializeField] private Sprite f2Map;
 
     public static MenuManager GetInstance()
     {
@@ -33,7 +40,7 @@ public class MenuManager : MonoBehaviour
         else {
             instance = this;
         }
-        
+
         menuIsOpen = false;
         menu.SetActive(false);
         DontDestroyOnLoad(gameObject);
@@ -43,12 +50,13 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonUp("Cancel")) {
-            if (menu.activeInHierarchy) 
+            if (menu.activeInHierarchy)
             {
                 menu.SetActive(false);
                 menuIsOpen = false;
             } else {
                 UpdateInventory();
+                UpdateMap();
                 menu.SetActive(true);
                 menuIsOpen = true;
             }
@@ -80,6 +88,27 @@ public class MenuManager : MonoBehaviour
             itemSlot.GetComponent<ItemButtonClick>().SetItemOnButton(item);
 
         }
+    }
+
+    public void UpdateMap() 
+    {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+
+        Image mapImage = mapContainer.GetComponent<Image>();
+
+        switch (sceneName)
+        {
+            case "FirstFloor":
+                mapImage.sprite = f1Map;
+                break;
+            case "SecondFloor":
+                mapImage.sprite = f2Map;
+                break;
+            default:
+                break;
+        }
+
     }
 
     public void QuitGame()
