@@ -92,11 +92,13 @@ public class MenuManager : MonoBehaviour
 
     public void UpdateMap() 
     {
+        // Get current scene and the name of the scene
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
 
         Image mapImage = mapContainer.GetComponent<Image>();
 
+        // Change png of map in the menu depending on what scene player is in
         switch (sceneName)
         {
             case "FirstFloor":

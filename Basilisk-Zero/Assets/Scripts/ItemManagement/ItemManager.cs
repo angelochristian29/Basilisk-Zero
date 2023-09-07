@@ -59,6 +59,6 @@ public class ItemManager : MonoBehaviour
 
     public void destroyItem()
     {
-        Object.Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
