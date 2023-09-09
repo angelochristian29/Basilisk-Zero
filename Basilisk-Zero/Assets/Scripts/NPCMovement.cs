@@ -37,7 +37,7 @@ public class NPCMovement : MonoBehaviour
         {
             return;
         }
-
+        
         moveNPC();
 
     }
