@@ -27,21 +27,20 @@ public class NicoCutscene : MonoBehaviour
 
     public bool NicoDialogueTrigger; // Flag indicating if the dialogue should be triggered
     public bool NicoDialogueDone; // Flag indicating if the dialogue is done
-    public PlayerController playerController; // The PlayerController component
+    // public PlayerController playerController; // The PlayerController component
 
     // Start is called before the first frame update
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
         dawnRb = dawn.GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component of the Nico object
-         playerRb = playerController.GetComponent<Rigidbody2D>();
+         // playerRb = playerController.GetComponent<Rigidbody2D>();
         
     }
 
     // Update is called once per frame
     private void Update()
     {
-
         // Check if dialogue is playing or menu is open
         if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
         {
@@ -55,7 +54,7 @@ public class NicoCutscene : MonoBehaviour
         else
         {
             // Check if Nico object is authorized to move and if the dialogue needs to be triggered
-            TriggerDialogue(NicoDialogueTrigger, playerRb);
+            TriggerDialogue(NicoDialogueTrigger, PlayerController.instance.playerRB);
     
         }
     }
@@ -88,14 +87,13 @@ public class NicoCutscene : MonoBehaviour
     {
         walkDirection = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the player
         // Check if Nico is close to the player rigid body and if so stop moving
-        if (Vector2.Distance(playerController.transform.position, rb.transform.position) < 1.0f)
+        if (Vector2.Distance(PlayerController.instance.transform.position, rb.transform.position) < 1.0f)
         {
             isMoving = false; // Set the isMoving flag to false
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
-            if (InkDialogueManager.GetInstance().canContinueLine == false)
-            {
-                StartCoroutine(InkDialogueManager.GetInstance().ExitDialogueMode());
-            }
+            // InkDialogueManager.GetInstance().canContinueLine == false
+            // StartCoroutine(InkDialogueManager.GetInstance().ExitDialogueMode());
+            NicoDialogueTrigger = false;
             return; // Exit the function
         }
         isMoving = true; // Set the isMoving flag to true

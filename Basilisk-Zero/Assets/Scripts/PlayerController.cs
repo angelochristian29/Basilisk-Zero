@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movInput;
     SpriteRenderer spriteRend;
-    Rigidbody2D playerRB;
+    public Rigidbody2D playerRB;
     Animator animator;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
