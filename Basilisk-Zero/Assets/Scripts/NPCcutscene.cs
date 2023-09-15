@@ -1,6 +1,7 @@
 using UnityEngine;
-
-public class NicoCutscene : MonoBehaviour
+using System.Collections;
+using System.Collections.Generic;
+public class NPCcutscene : MonoBehaviour
 {
     // Speed of the NPC
     [SerializeField] private float speed = 0f;
@@ -25,7 +26,9 @@ public class NicoCutscene : MonoBehaviour
     // Directions
     private Vector3 walkDirection; // The direction to walk towards
 
-    public bool NicoDialogueTrigger; // Flag indicating if the dialogue should be triggered
+    public bool NPCTrigger1; // Flag indicating if the dialogue should be triggered
+    public bool NPCTrigger2;
+    public bool NPCTrigger3;
     public bool NicoDialogueDone; // Flag indicating if the dialogue is done
     // public PlayerController playerController; // The PlayerController component
 
@@ -48,31 +51,53 @@ public class NicoCutscene : MonoBehaviour
         }
         if (NicoDialogueDone == true)
         {
-            TriggerDialogue(NicoDialogueTrigger, dawnRb);
-            // return; // Exit the function
+            TriggerNPC(NPCTrigger1, dawnRb);
         }
         else
         {
             // Check if Nico object is authorized to move and if the dialogue needs to be triggered
-            TriggerDialogue(NicoDialogueTrigger, PlayerController.instance.playerRB);
-    
+            TriggerNPC(NPCTrigger2, PlayerController.instance.playerRB);
         }
     }
 
-    private void afterCutscene()
+    // Trigger the ink dialogue when NPC reaches a set point
+    private void TriggerNPC(bool NPCTrigger, Rigidbody2D moveToObject)
     {
-        NicoDialogueDone = true;
-        NicoDialogueTrigger = false;
-        return;
+        if (NPCTrigger == true)
+        {
+            // Trigger ink dialogue here
+            ChooseDirection(moveToObject); // Choose the direction to walk towards
+            StartInkDialogue(moveToObject, NPCTrigger);
+            moveNPCto(); // Move Nico
+        }
     }
-
+    
+    // Choose the direction to walk towards
+    public void ChooseDirection(Rigidbody2D moveToObject)
+    {
+        walkDirection = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the 
+        isMoving = true;
+        // StartInkDialogue();
+        // Check if Nico is close to the player rigid body and if so stop moving
+        // Set the isMoving flag to true
+    }
+    public void StartInkDialogue(Rigidbody2D moveToObject, bool NPCTrigger)
+    {
+        if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 1.0f)
+        {
+            isMoving = false; // Set the isMoving flag to false
+            InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
+            NicoDialogueDone = true;
+            NPCTrigger = false;
+            return; // Exit the function
+        }
+    }
     // Move Nico in the specified direction
-    private void moveNico()
+    private void moveNPCto()
     {
         if (isMoving)
         {
             walkCounter -= Time.deltaTime; // Decrease the walk counter
-
             // Move towards the player
             rb.velocity = walkDirection * speed;
         }
@@ -82,32 +107,4 @@ public class NicoCutscene : MonoBehaviour
         }
     }
 
-    // Choose the direction to walk towards
-    public void ChooseDirection(Rigidbody2D moveToObject)
-    {
-        walkDirection = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the player
-        // Check if Nico is close to the player rigid body and if so stop moving
-        if (Vector2.Distance(PlayerController.instance.transform.position, rb.transform.position) < 1.0f)
-        {
-            isMoving = false; // Set the isMoving flag to false
-            InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
-            // InkDialogueManager.GetInstance().canContinueLine == false
-            // StartCoroutine(InkDialogueManager.GetInstance().ExitDialogueMode());
-            NicoDialogueTrigger = false;
-            return; // Exit the function
-        }
-        isMoving = true; // Set the isMoving flag to true
-        walkCounter = walkTime; // Set the walk counter
-    }
-
-    // Trigger the ink dialogue when NPC reaches a set point
-    private void TriggerDialogue(bool NicoDialogueTrigger, Rigidbody2D moveToObject)
-    {
-        if (NicoDialogueTrigger == true)
-        {
-            // Trigger ink dialogue here
-            ChooseDirection(moveToObject); // Choose the direction to walk towards
-            moveNico(); // Move Nico
-        }
-    }
 }
