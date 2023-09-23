@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
             instance = this;
         }
         playerRB = GetComponent<Rigidbody2D>();
+        playerRB.velocity = Vector2.zero;
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         DontDestroyOnLoad(gameObject);

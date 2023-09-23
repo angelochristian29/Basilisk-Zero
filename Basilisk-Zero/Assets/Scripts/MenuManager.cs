@@ -121,6 +121,7 @@ public class MenuManager : MonoBehaviour
 
     public void FadeImage()
     {
-        imageToFade.GetComponent<Animator>().SetTrigger("Start Fading");
+        imageToFade.GetComponent<Animator>().SetTrigger("StartFadeToBlack");
+        //imageToFade.GetComponent<Animator>().SetBool("FadeBool", fade);
     }
 }
