@@ -6,7 +6,7 @@ using System.Linq;
 
 public class TypingManager
 {
-    LinkedList<char> _currentWord = null;
+    Queue<char> _currentWord = null;
 
     public TypingManager(string word)
     {
@@ -15,14 +15,14 @@ public class TypingManager
 
     public void SetAsNewWord(string word)
     {
-        _currentWord = new LinkedList<char>(word.ToLower());
+        _currentWord = new Queue<char>(word.ToLower());
     }
 
     public bool CheckCharacter(char inputChar)
     {
-        if (_currentWord.First.Value == inputChar)
+        if (_currentWord.Count > 0 && _currentWord.Peek() == inputChar)
         {
-            _currentWord.RemoveFirst();
+            _currentWord.Dequeue();
             return true;
         }
         return false;
@@ -35,7 +35,7 @@ public class TypingManager
 
     public string GetCurrentWord()
     {
-        return string.Join("", _currentWord.ToArray());
+        return string.Concat(_currentWord);
     }
 
 }
