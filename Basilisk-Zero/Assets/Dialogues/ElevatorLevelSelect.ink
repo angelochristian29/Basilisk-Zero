@@ -9,3 +9,13 @@ Which level would you like to go to?
     + [Second Level]
         ~ chooseLevel("SecondFloor", "Elevator")
         -> END
+
+    + [Fifteenth Level]
+        ~ chooseLevel("FifteenthFloor", "Elevator")
+        -> END
+    + [Twenty Eighth Level]
+        ~ chooseLevel("TwentyEighthFloor", "Elevator")
+        -> END
+    + [Seventy Second Level]
+        ~ chooseLevel("SeventySecondFloor", "Elevator")
+        -> END
