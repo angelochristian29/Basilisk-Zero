@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update() {
         // Stop player movement if in dialogue
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen || OpenTypingGame.GetInstance().gameIsPlaying) {
             return;
         }
 
