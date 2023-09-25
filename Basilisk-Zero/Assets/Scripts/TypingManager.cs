@@ -33,9 +33,9 @@ public class TypingManager
         return _currentWord.Count <= 0;
     }
 
-    public string GetCurrentWord()
+     public string GetCurrentWord()
     {
-        return string.Concat(_currentWord);
+        return string.Join("", _currentWord.ToArray());
     }
 
 }

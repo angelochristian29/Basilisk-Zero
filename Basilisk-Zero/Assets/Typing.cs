@@ -13,7 +13,7 @@ public class Typing : MonoBehaviour
     }
     [SerializeField]
     private FileData _data;
-
+   
     private Queue<string> _wordsQueue;
     private ITextAssetReader _textReader;
     private TypingManager typingManager;
@@ -53,8 +53,11 @@ public class Typing : MonoBehaviour
         if(_wordsQueue.Count == 0){
             Debug.Log("All words completed") ;
            // typingCanvas.SetActive(false);
-            Destroy(typingCanvas);
-            OpenTypingGame.instance.gameIsPlaying = false;
+            // Destroy(typingCanvas);
+             OpenTypingGame.GetInstance().gameIsDone = true;
+
+            OpenTypingGame.GetInstance().gameIsPlaying = false;
+           
             return "";
         }
         else{
