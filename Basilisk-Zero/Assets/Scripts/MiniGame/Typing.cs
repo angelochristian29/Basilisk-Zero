@@ -13,7 +13,7 @@ public class Typing : MonoBehaviour
     }
     [SerializeField]
     private FileData _data;
-   
+
     private Queue<string> _wordsQueue;
     private ITextAssetReader _textReader;
     private TypingManager typingManager;
@@ -44,26 +44,26 @@ public class Typing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    
+
     public string GetNextWord()
     {
-        if(_wordsQueue.Count == 0){
-            Debug.Log("All words completed") ;
-           // typingCanvas.SetActive(false);
-            // Destroy(typingCanvas);
-             OpenTypingGame.GetInstance().gameIsDone = true;
-
+        if (_wordsQueue.Count == 0)
+        {
+            // Ends the game and shuts Down UI elements
+            Debug.Log("All words completed");
+            OpenTypingGame.GetInstance().gameIsDone = true;
             OpenTypingGame.GetInstance().gameIsPlaying = false;
-           
+
             return "";
         }
-        else{
+        else
+        {
             return _wordsQueue.Dequeue();
         }
-        
+
     }
 
     public void CheckPlayerInput(char c)

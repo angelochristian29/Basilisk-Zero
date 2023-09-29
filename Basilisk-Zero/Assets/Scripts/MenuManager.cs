@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] Image imageToFade;
+    [SerializeField] GameObject imageToFade;
     [SerializeField] GameObject menu;
 
     public static MenuManager instance;
