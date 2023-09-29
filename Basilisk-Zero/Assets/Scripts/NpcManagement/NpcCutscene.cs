@@ -1,29 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class NPCcutscene : MonoBehaviour
+public class NpcCutscene : MonoBehaviour
 {
     // Speed of the NPC
     [SerializeField] private float speed = 0f;
-
-    // Time between movements
-    [SerializeField] public float waitTime = 3f; // The time to wait before moving again
-    [SerializeField] public float walkTime = 0f; // The time to walk in a direction
-
-    [SerializeField] private TextAsset inkJSON; // The Ink JSON file for dialogue
-
     [SerializeField] private GameObject dawn; // The Nico object
+    [SerializeField] private TextAsset inkJSON; // The ink JSON file
     private Rigidbody2D dawnRb; // The Rigidbody2D component of the Nico object
     // Internal variables
-
     private Rigidbody2D playerRb;
     private Vector2 movement; // The movement vector
     private float timeSinceLastMove; // The time since the last movement
     private Rigidbody2D rb; // The Rigidbody2D component
     public bool isMoving; // Flag indicating if the NPC is currently moving
-    private float walkCounter; // The counter for walking time
-    private float waitCounter; // The counter for waiting time
-    // Directions
     private Vector3 walkDirection; // The direction to walk towards
 
     public bool NPCTrigger1; // Flag indicating if the dialogue should be triggered
@@ -77,13 +67,15 @@ public class NPCcutscene : MonoBehaviour
     {
         walkDirection = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the 
         isMoving = true;
-        // StartInkDialogue();
-        // Check if Nico is close to the player rigid body and if so stop moving
-        // Set the isMoving flag to true
     }
     public void StartInkDialogue(Rigidbody2D moveToObject, bool NPCTrigger)
     {
-        if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 1.0f)
+        // check if moveToObject is a Rigidbody2D
+        if (moveToObject.GetComponent<Rigidbody2D>() == null)
+        {
+            return; // Exit the function
+        }
+        else if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 1.0f)
         {
             isMoving = false; // Set the isMoving flag to false
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
@@ -97,7 +89,6 @@ public class NPCcutscene : MonoBehaviour
     {
         if (isMoving)
         {
-            walkCounter -= Time.deltaTime; // Decrease the walk counter
             // Move towards the player
             rb.velocity = walkDirection * speed;
         }
