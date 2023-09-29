@@ -46,6 +46,6 @@ public class LevelManager : MonoBehaviour
     {
         bottomLeftEdge = tilemap.localBounds.min + new Vector3(0f, 1f, 0f);
         topRightEdge = tilemap.localBounds.max + new Vector3(-0f, -1f, 0f);
-        PlayerController.instance.SetLimit(bottomLeftEdge, topRightEdge);
+        PlayerController.GetInstance().SetLimit(bottomLeftEdge, topRightEdge);
     }
 }

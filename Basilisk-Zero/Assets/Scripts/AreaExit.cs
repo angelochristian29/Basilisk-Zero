@@ -33,8 +33,8 @@ public class AreaExit : MonoBehaviour
         if (playerInRange) {
             visualCue.SetActive(true);
             if (Input.GetButtonUp("Fire1") && Inventory.instance.isInInventory("Level 2 Keycard")) {
-                PlayerController.instance.transitionName = transitionAreaName;
-                MenuManager.instance.FadeImage();
+                PlayerController.GetInstance().transitionName = transitionAreaName;
+                MenuManager.GetInstance().FadeImage();
                 StartCoroutine(LoadSceneCoroutine());
             }
         } else {
@@ -57,7 +57,7 @@ public class AreaExit : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine() {
         yield return new WaitForSeconds(1f);
-        MenuManager.instance.FadeImage();
+        MenuManager.GetInstance().FadeImage();
         SceneManager.LoadScene(sceneToLoad);
     }
 }

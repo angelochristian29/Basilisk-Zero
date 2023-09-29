@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    public static PlayerController GetInstance()
+    {
+        return instance;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
