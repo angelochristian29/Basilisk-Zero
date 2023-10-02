@@ -1,27 +1,25 @@
 using UnityEngine;
-
-public class NPCMovement : MonoBehaviour
+using System.Collections;
+using System.Collections.Generic;
+public class NpcNico : NpcCutscene
 {
-     // Speed of the NPC
-    [SerializeField] private float speed = 0f;
-
-    // Time between movements
     [SerializeField] public float waitTime = 3f;
     [SerializeField] public float walkTime = 0f;
-
     // Internal variables
     private Vector2 movement;
     private float timeSinceLastMove;
-
-    private Rigidbody2D rb;
-    public bool isMoving;
     private float walkCounter;
     private float waitCounter;
 
-    // Directions
     private int walkDirection;
-    
-    public void Start() 
+
+    // private Rigidbody2D rb;
+    // public bool isMoving;
+
+    // Directions
+    // public int walkDirection;
+
+    public override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         waitCounter = waitTime;
@@ -30,24 +28,31 @@ public class NPCMovement : MonoBehaviour
         ChooseDirection();
     }
 
-    public void Update()
+    public override void Update()
     {
-        // dialogueIsPlaying isn't working here
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
+        if (NPCTrigger2)
         {
-            return;
+            base.Start();
+            base.Update(); 
+        }
+        else
+        {
+            if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
+            {
+                return;
+            }
+        moveNPC();
         }
         
-        moveNPC();
-
+        // if player is within a certain range then apply base.Update()
     }
 
-    public void moveNPC()
+
+    private void moveNPC()
     {
         if (isMoving)
         {
             walkCounter -= Time.deltaTime;
-
             switch (walkDirection)
             {
                 case 0:
@@ -65,19 +70,16 @@ public class NPCMovement : MonoBehaviour
                 default:
                     break;
             }
-
             if (walkCounter < 0)
             {
                 isMoving = false;
                 waitCounter = waitTime;
             }
-
         }
         else
         {
             waitCounter -= Time.deltaTime;
             rb.velocity = Vector2.zero;
-            
             if (waitCounter < 0)
             {
                 ChooseDirection();
@@ -86,11 +88,10 @@ public class NPCMovement : MonoBehaviour
     }
 
 
-    public void ChooseDirection()
+    private void ChooseDirection()
     {
         walkDirection = Random.Range(0,4);
         isMoving = true;
         walkCounter = walkTime;
     }
-
 }

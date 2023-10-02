@@ -4,17 +4,15 @@ using System.Collections.Generic;
 public class NpcCutscene : MonoBehaviour
 {
     // Speed of the NPC
-    [SerializeField] private float speed = 0f;
+    [SerializeField] public float speed = 0f;
     [SerializeField] private GameObject dawn; // The Nico object
     [SerializeField] private TextAsset inkJSON; // The ink JSON file
-    private Rigidbody2D dawnRb; // The Rigidbody2D component of the Nico object
+    protected Rigidbody2D dawnRb; // The Rigidbody2D component of the Nico object
     // Internal variables
-    private Rigidbody2D playerRb;
-    private Vector2 movement; // The movement vector
-    private float timeSinceLastMove; // The time since the last movement
-    private Rigidbody2D rb; // The Rigidbody2D component
+    protected Rigidbody2D playerRb;
+    public Rigidbody2D rb; // The Rigidbody2D component
     public bool isMoving; // Flag indicating if the NPC is currently moving
-    private Vector3 walkDirection; // The direction to walk towards
+    protected Vector3 walkDirection3D; // The direction to walk towards
 
     public bool NPCTrigger1; // Flag indicating if the dialogue should be triggered
     public bool NPCTrigger2;
@@ -22,8 +20,10 @@ public class NpcCutscene : MonoBehaviour
     public bool NicoDialogueDone; // Flag indicating if the dialogue is done
     // public PlayerController playerController; // The PlayerController component
 
+    // public NPCMovement npcmovement;
+
     // Start is called before the first frame update
-    public void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
         dawnRb = dawn.GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component of the Nico object
@@ -32,7 +32,7 @@ public class NpcCutscene : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public virtual void Update()
     {
         // Check if dialogue is playing or menu is open
         if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
@@ -51,11 +51,12 @@ public class NpcCutscene : MonoBehaviour
     }
 
     // Trigger the ink dialogue when NPC reaches a set point
-    private void TriggerNPC(bool NPCTrigger, Rigidbody2D moveToObject)
+    public virtual void TriggerNPC(bool NPCTrigger, Rigidbody2D moveToObject)
     {
         if (NPCTrigger == true)
         {
             // Trigger ink dialogue here
+            // npcmovement.scriptOffTrigger = true;
             ChooseDirection(moveToObject); // Choose the direction to walk towards
             StartInkDialogue(moveToObject, NPCTrigger);
             moveNPCto(); // Move Nico
@@ -63,12 +64,12 @@ public class NpcCutscene : MonoBehaviour
     }
     
     // Choose the direction to walk towards
-    public void ChooseDirection(Rigidbody2D moveToObject)
+    public virtual void ChooseDirection(Rigidbody2D moveToObject)
     {
-        walkDirection = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the 
+        walkDirection3D = (moveToObject.transform.position - rb.transform.position).normalized; // Calculate the direction towards the 
         isMoving = true;
     }
-    public void StartInkDialogue(Rigidbody2D moveToObject, bool NPCTrigger)
+    public virtual void StartInkDialogue(Rigidbody2D moveToObject, bool NPCTrigger)
     {
         // check if moveToObject is a Rigidbody2D
         if (moveToObject.GetComponent<Rigidbody2D>() == null)
@@ -81,16 +82,17 @@ public class NpcCutscene : MonoBehaviour
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
             NicoDialogueDone = true;
             NPCTrigger = false;
+            // npcmovement.scriptOffTrigger = false;
             return; // Exit the function
         }
     }
     // Move Nico in the specified direction
-    private void moveNPCto()
+    public virtual void moveNPCto()
     {
         if (isMoving)
         {
             // Move towards the player
-            rb.velocity = walkDirection * speed;
+            rb.velocity = walkDirection3D * speed;
         }
         else
         {
