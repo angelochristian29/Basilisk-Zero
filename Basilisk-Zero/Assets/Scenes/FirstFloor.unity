@@ -34274,7 +34274,7 @@ PrefabInstance:
       objectReference: {fileID: 475697187}
     - target: {fileID: 8339191869690345858, guid: c3f170aa76667b64da2c9138273591da, type: 3}
       propertyPath: movSpeed
-      value: 2.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8339191869690345858, guid: c3f170aa76667b64da2c9138273591da, type: 3}
       propertyPath: transitionName
