@@ -29,7 +29,7 @@ public class InkDialogueManager : MonoBehaviour
     private Story currentStory;
     // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
-    private bool canContinueLine = false;
+    public bool canContinueLine { get; private set; }
     private Coroutine displayLineCoroutine;
     private static InkDialogueManager instance;
 
@@ -96,7 +96,7 @@ public class InkDialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-    private IEnumerator ExitDialogueMode()
+    public IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
 
