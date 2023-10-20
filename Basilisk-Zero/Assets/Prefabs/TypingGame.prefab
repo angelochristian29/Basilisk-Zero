@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6108282028627631884
 Transform:
   m_ObjectHideFlags: 0
@@ -43,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 899926134960461529, guid: 83e1aed4ab2fb20498436500dd2ba118, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685333028173036550, guid: 83e1aed4ab2fb20498436500dd2ba118, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4760683941150358375, guid: 83e1aed4ab2fb20498436500dd2ba118, type: 3}
       propertyPath: m_Pivot.x
@@ -322,7 +326,7 @@ PrefabInstance:
     - target: {fileID: 352467492841104783, guid: f01a4005b4fa578499c0ec5153c662d1, type: 3}
       propertyPath: typingCanvas
       value: 
-      objectReference: {fileID: 4267491255060566673}
+      objectReference: {fileID: 6108282028627631885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01a4005b4fa578499c0ec5153c662d1, type: 3}
 --- !u!4 &6108282028644568190 stripped

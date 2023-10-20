@@ -13,7 +13,7 @@ public class InkExternalFunctions
             Then fade canvas to black and load next scene
         */
         story.BindExternalFunction("chooseLevel", (string levelName, string enterName) => {
-            PlayerController.instance.transitionName = enterName;
+            PlayerController.GetInstance().transitionName = enterName;
             SceneManager.LoadScene(levelName);
         });
     }
@@ -25,7 +25,7 @@ public class InkExternalFunctions
 
     IEnumerator LoadSceneCoroutine(string levelName) {
         yield return new WaitForSeconds(1f);
-        MenuManager.instance.FadeImage();
+        //MenuManager.GetInstance().FadeImage();
         SceneManager.LoadScene(levelName);
     }
 }

@@ -28522,6 +28522,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 804594304310117951, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
   m_PrefabInstance: {fileID: 274447908}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &331636477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1360723655, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+  m_PrefabInstance: {fileID: 8357665200939353153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &468885091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8052945779017815115, guid: 2e197ec6cfdcee74e823bed18a161e6e, type: 3}
@@ -33244,6 +33249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 600595494}
     m_Modifications:
+    - target: {fileID: 34287346, guid: 4fa669a76231891458aabab756791a08, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: c9777efc305114a4191e388d7b5b9513, type: 3}
     - target: {fileID: 3343667705278058436, guid: 4fa669a76231891458aabab756791a08, type: 3}
       propertyPath: speed
       value: 1
@@ -33258,11 +33267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8421322641242023248, guid: 4fa669a76231891458aabab756791a08, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7763438
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 8421322641242023248, guid: 4fa669a76231891458aabab756791a08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.665379
+      value: -4.53
       objectReference: {fileID: 0}
     - target: {fileID: 8421322641242023248, guid: 4fa669a76231891458aabab756791a08, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33420,6 +33429,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 928617722}
     m_Modifications:
+    - target: {fileID: 1297101064888170574, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 1297101064888170574, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297101064888170574, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6108282028627631884, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -33468,14 +33489,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TypingGame
       objectReference: {fileID: 0}
-    - target: {fileID: 6108282028627631885, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108282028644568191, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
-      propertyPath: typingCanvas
-      value: 
-      objectReference: {fileID: 2147180779}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
 --- !u!1 &928617719
@@ -34423,6 +34436,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 731974287}
+    - target: {fileID: 1360723655, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360723656, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: imageToFade
+      value: 
+      objectReference: {fileID: 331636477}
     - target: {fileID: 7447824196456526094, guid: da9e81983d32caa449b72572c9df441f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -34527,6 +34552,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 731974287}
+    - target: {fileID: 8357665201873202674, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 78f5f362e4f93a14fb8d776ccbaa2a34, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da9e81983d32caa449b72572c9df441f, type: 3}
 --- !u!1001 &8362099398355354358
