@@ -8,9 +8,12 @@ public class InkExternalFunctions
 {
     public void Bind(Story story)
     {
+        /* 
+            Change variable on player to the location they should spawn at
+            Then fade canvas to black and load next scene
+        */
         story.BindExternalFunction("chooseLevel", (string levelName, string enterName) => {
-            //Debug.Log(enterName);
-            PlayerController.instance.transitionName = enterName;
+            PlayerController.GetInstance().transitionName = enterName;
             SceneManager.LoadScene(levelName);
         });
     }
@@ -20,5 +23,9 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("chooseLevel");
     }
 
-    
+    IEnumerator LoadSceneCoroutine(string levelName) {
+        yield return new WaitForSeconds(1f);
+        //MenuManager.GetInstance().FadeImage();
+        SceneManager.LoadScene(levelName);
+    }
 }

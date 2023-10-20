@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondFloor.unity
     guid: 5dd4f2d066347a34c983b1884094595b
+  - enabled: 1
+    path: Assets/Scenes/FifteenthFloor.unity
+    guid: 1b0e96c33ca987a47b930784129be465
+  - enabled: 1
+    path: Assets/Scenes/TwentyEighthFloor.unity
+    guid: f4834777501f48c44ad6f24988ae8689
+  - enabled: 1
+    path: Assets/Scenes/SeventySecondFloor.unity
+    guid: cac928017035ff44faad7979e6af824d
   m_configObjects: {}

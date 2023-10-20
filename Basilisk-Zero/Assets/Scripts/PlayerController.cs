@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    public static PlayerController GetInstance()
+    {
+        return instance;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,7 @@ public class PlayerController : MonoBehaviour
             instance = this;
         }
         playerRB = GetComponent<Rigidbody2D>();
+        playerRB.velocity = Vector2.zero;
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         DontDestroyOnLoad(gameObject);
@@ -42,7 +48,7 @@ public class PlayerController : MonoBehaviour
     
     private void Update() {
         // Stop player movement if in dialogue
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen) {
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen || OpenTypingGame.GetInstance().gameIsPlaying) {
             return;
         }
 

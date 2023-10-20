@@ -1,37 +1,40 @@
 ﻿INCLUDE globals.ink
 
-{ supportAI == 0: -> DawnAssistance | -> DawnAssistanceEnding }
+{ supportAI == 2: -> DawnAssistance | -> DawnAssistanceEnding }
 === DawnAssistance ===
 #speaker:Dawn
 #portrait:DawnNeutral
 Hey newbie! My name's Dawn.
-Do you think you can help me out real quick?
+Do you want to start on your first assignment with me?
     * { derailment < 10 } [Sure thing!]
         Thanks so much!
-        Ok, I just need you to help me with this logic file.
+        Ok, I just need you to write a print statement on this logic file.
+        Then I need you to upload it to the 2nd Floor computer.
         ~ supportAI = supportAI + 10
         -> DawnFileUpload
-    * { derailment >= 0 } [Sorry, I'm busy at the moment.]
+    * { derailment >= 0 } [Sorry, I'm a little busy at the moment.]
         That's ok.
         You probably have a lot on your plate.
         ~ supportAI = supportAI - 10
         -> DawnAssistanceEnding
 
 === DawnFileUpload ===
-Hey, do you think you can help me one more time?
-    * [No problem, how can I help?]
-        Ask the manager if you can borrow his keycard to the second floor.
+Go to your desk and interact with your computer.
+    * [Ok, how do I do that?]
+        Walk over to your desk and press "E" on the keyboard!
+        That should open the file I wanted you to finish.
+        Then go to Nico's office and borrow his keycard to the second floor.
         His office is to the right of the elevator.
-        Tell him you want to upload a file and he'll let you know what to do.
+        Once you're in his office and get near the keycard, press the "E" button on your keyboard.
+        When you get the card, I'll meet you up on the second floor to help upload the file.
         ~ supportAI = supportAI + 10
         -> DONE
--> END 
+-> END
 
 === DawnAssistanceEnding ===
 #speaker:Dawn
 #portrait:DawnNeutral
-You should go meet the manager, Nico. He's a nice guy and I think he wanted to see you.
-His office is to the right of the elevator by the way.
+Nico's office is to the right of the elevator by the way.
 Just follow the green floor upwards towards the elevator.
-It was nice meeting you anyway.
+It was nice meeting you.
 -> END
