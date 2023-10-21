@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4056775bd8cffe44ba1584d5ba677d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToFade: {fileID: 0}
+  imageToFade: {fileID: 1360723655}
   menu: {fileID: 960537773923130529}
   itemSlotContainer: {fileID: 3394731404669943574, guid: 43c8254bc971c8a4d934181f5aa92700, type: 3}
   itemSlotContainerParent: {fileID: 1008252058}

@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381001378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3068300675839293483}
-  - component: {fileID: 3898384382241591482}
+  - component: {fileID: 3402658581899093040}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -78,7 +78,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3898384382241591482
+--- !u!114 &3402658581899093040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606de61f540326046a06736774124276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 0.08
+  textSpeed: 0.02
   loadGlobalsJSON: {fileID: 4900000, guid: 9b467724055b3d54ba0a873cabec99ae, type: 3}
   dialoguePanel: {fileID: 0}
   continueIcon: {fileID: 0}
@@ -144,5 +144,8 @@ MonoBehaviour:
   displayNameText: {fileID: 0}
   portraitAnimator: {fileID: 0}
   choices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

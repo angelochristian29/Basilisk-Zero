@@ -72,7 +72,7 @@ public class MenuManager : MonoBehaviour
         }
 
         // add items from inventory List
-        foreach (ItemManager item in Inventory.instance.GetItems()) 
+        foreach (ItemManager item in Inventory.GetInstance().GetItems()) 
         {
             RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
 
