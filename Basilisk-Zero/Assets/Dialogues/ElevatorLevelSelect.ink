@@ -1,21 +1,30 @@
-﻿EXTERNAL chooseLevel(levelName, enterName)
+﻿INCLUDE globals.ink
+EXTERNAL chooseLevel(levelName, enterName)
 
+-> LevelSelect
 
+=== LevelSelect ===
 Which level would you like to go to?
     + [First Floor]
-        ~ chooseLevel("FirstFloor", "Elevator")
+        ~ sceneToLoad = "FirstFloor"
+        ~ choseLevel = true
         -> END
-    
     + [Second Level]
-        ~ chooseLevel("SecondFloor", "Elevator")
+        ~ sceneToLoad = "SecondFloor"
+        ~ choseLevel = true
         -> END
-
     + [Fifteenth Level]
-        ~ chooseLevel("FifteenthFloor", "Elevator")
+        ~ sceneToLoad = "FifteenthFloor"
+        ~ choseLevel = true
         -> END
     + [Twenty Eighth Level]
-        ~ chooseLevel("TwentyEighthFloor", "Elevator")
+        ~ sceneToLoad = "TwentyEighthFloor"
+        ~ choseLevel = true
         -> END
     + [Seventy Second Level]
-        ~ chooseLevel("SeventySecondFloor", "Elevator")
+        ~ sceneToLoad = "SeventySecondFloor"
+        ~ choseLevel = true
         -> END
+
+=== function chooseLevel(levelName, enterName) ===
+~ return

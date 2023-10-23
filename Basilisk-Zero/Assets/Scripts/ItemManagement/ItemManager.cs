@@ -37,7 +37,7 @@ public class ItemManager : MonoBehaviour
         {
             visualCue.SetActive(true);
             if (Input.GetButtonUp("Fire1")) {
-                Inventory.instance.AddItems(this);
+                Inventory.GetInstance().AddItems(this);
                 destroyItem();
             }
         } else {
