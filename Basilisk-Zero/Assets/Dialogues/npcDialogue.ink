@@ -1,6 +1,8 @@
 INCLUDE globals.ink
 
-{ sceneToLoad == "SecondFloor": -> HackComputer | -> npcGreetings }
+{ derailment == 30 && sceneToLoad == "SecondFloor": -> HackComputer | -> TalkToZackFirst }
+{ supportAI == 30 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload | -> TalkToDawnFirst }
+{ derailment < 30 && supportAI < 30: -> npcGreetings}
 
 === npcGreetings ===
 #speaker:Joe
@@ -35,4 +37,23 @@ I might get fired for this ...
         OH YEA the computer doesn't work anymore.
         Now I should look for that angry employee.
         ~ derailment = derailment + 10
+        -> DONE
+
+=== TalkToZackFirst ===
+#speaker:Player
+I should probably talk to Zach first before messign around with the PC.
+-> DONE
+
+=== TalkToDawnFirst ===
+#speaker:Player
+I should probably talk to Dawn first before messign around with the PC.
+-> DONE
+
+=== PasswordForFileUpload ===
+#speaker:Player
+Okay Dawn told me it's this computer and told me the password is 0854.
+    * [I'll Type in 0854]
+        That looked like it worked thankfully.
+        Now I should look for that angry employee.
+        ~ supportAI = supportAI + 10
         -> DONE
