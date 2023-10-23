@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class NpcNico : NpcCutscene
+public class GuardMovement : NpcCutscene
 {
     [SerializeField] public float waitTime = 3f;
     [SerializeField] public float walkTime = 0f;
@@ -30,7 +30,7 @@ public class NpcNico : NpcCutscene
 
     public override void Update()
     {
-        if (NPCTrigger2)
+        if (NPCTrigger1)
         {
             base.Start();
             base.Update(); 

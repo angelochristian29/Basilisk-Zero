@@ -15,8 +15,6 @@ public class NpcCutscene : MonoBehaviour
     protected Vector3 walkDirection3D; // The direction to walk towards
 
     public bool NPCTrigger1; // Flag indicating if the dialogue should be triggered
-    public bool NPCTrigger2;
-    public bool NPCTrigger3;
     public bool NicoDialogueDone; // Flag indicating if the dialogue is done
     // public PlayerController playerController; // The PlayerController component
 
@@ -39,14 +37,12 @@ public class NpcCutscene : MonoBehaviour
         {
             return; // Exit the function
         }
-        if (NicoDialogueDone == true)
+        // if the player is in range then trigger then set the NPCTrigger1 flag to true
+        if (Vector2.Distance(dawnRb.transform.position, rb.transform.position) < 1.0f)
         {
-            TriggerNPC(NPCTrigger1, dawnRb);
-        }
-        else
-        {
+            NPCTrigger1 = true;
             // Check if Nico object is authorized to move and if the dialogue needs to be triggered
-            TriggerNPC(NPCTrigger2, PlayerController.instance.playerRB);
+            TriggerNPC(NPCTrigger1, PlayerController.instance.playerRB);
         }
     }
 
@@ -81,7 +77,7 @@ public class NpcCutscene : MonoBehaviour
             isMoving = false; // Set the isMoving flag to false
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
             NicoDialogueDone = true;
-            NPCTrigger = false;
+            NPCTrigger1 = false;
             // npcmovement.scriptOffTrigger = false;
             return; // Exit the function
         }
