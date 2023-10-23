@@ -56,7 +56,8 @@ public class Typing : MonoBehaviour
             Debug.Log("All words completed");
             OpenTypingGame.GetInstance().gameIsDone = true;
             OpenTypingGame.GetInstance().gameIsPlaying = false;
-
+            // InkDialogueManager.GetInstance().currentStory.variablesState["supportAI"] = 30;
+            // Debug.Log("supportAI = " + ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("supportAI")).value);
             return "";
         }
         else

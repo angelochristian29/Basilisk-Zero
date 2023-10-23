@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DawnNeutral
+  m_Name: DawnWhiteEyes
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1075565049, guid: 2ca8a4a4cb2ebf3499dfe1dbb8562216, type: 3}
+      value: {fileID: -1477904650, guid: 1cd62d2602a58c84da0559f0f2d9e03c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1075565049, guid: 2ca8a4a4cb2ebf3499dfe1dbb8562216, type: 3}
+    - {fileID: -1477904650, guid: 1cd62d2602a58c84da0559f0f2d9e03c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

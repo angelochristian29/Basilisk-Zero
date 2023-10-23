@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public string FirstFloor;
-    public string Title;
-    public string ControlsMenu;
+    
     // Start is called before the first frame update
   
     void Start(){
