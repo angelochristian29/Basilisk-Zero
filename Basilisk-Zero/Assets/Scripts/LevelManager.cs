@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
     {
         itemsInScene = itemsParent.GetComponentsInChildren<ItemManager>();
 
-        foreach (ItemManager itemInInventory in Inventory.instance.GetItems())
+        foreach (ItemManager itemInInventory in Inventory.GetInstance().GetItems())
         {
             for (int i = 0; i < itemsInScene.Length; i++)
             {

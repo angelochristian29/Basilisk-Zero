@@ -3,7 +3,6 @@
 {supportAI <= 1: -> NicoFirstMeetsPlayer | -> NicoGivesAdvice}
 === NicoFirstMeetsPlayer ===
 #speaker:Nico
-#portrait:DawnNeutral
 Hey you're the new hire. My name's Nico, you're going to love it here!
 I remember my first day like it was yesterday, but enough talk.
 I want to get you started on some work.
@@ -14,7 +13,6 @@ It doesn't matter who you talk to, but either one of them will assign you your f
 
 === NicoGivesAdvice ===
 #speaker:Nico
-#portrait:DawnNeutral
 Oh you want to talk more. Well I'll give you a little piece of advice.
 Talk to Dawn first if you want a leg up on the job.
 Zach will probably show you his newest game he's been playing. Unless you're into that too.

@@ -20,6 +20,11 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public static Inventory GetInstance()
+    {
+        return instance;
+    }
+
     // Update is called once per frame
     void Update()
     {
