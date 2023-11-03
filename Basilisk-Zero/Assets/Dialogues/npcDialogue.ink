@@ -1,8 +1,11 @@
 INCLUDE globals.ink
 
+{sceneToLoad=="FifteenthFloor": -> WanderingWorker} 
 { derailment == 30 && sceneToLoad == "SecondFloor": -> HackComputer | -> TalkToZackFirst }
 { supportAI == 30 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload | -> TalkToDawnFirst }
 { derailment < 30 && supportAI < 30: -> npcGreetings}
+
+
 
 === npcGreetings ===
 #speaker:Joe
@@ -57,3 +60,12 @@ Okay Dawn told me it's this computer and told me the password is 0854.
         Now I should look for that angry employee.
         ~ supportAI = supportAI + 10
         -> DONE
+
+=== WanderingWorker ===
+#speaker:Worker
+
+******....groans*.
+I don't want to get fired.
+I better work harder for the sake of the Basilisk.
+Don't you?
+->DONE
