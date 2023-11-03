@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31608536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.19, y: 0.15, z: 1.3193269}
+  m_LocalPosition: {x: -0.04, y: 0.32, z: 1.3193269}
   m_LocalScale: {x: 0.79644996, y: 0.79644996, z: 0.79644996}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33381,6 +33381,30 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3569728098263660545, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569728098263660545, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569728098263660545, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385702968796165080, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.b
+      value: 0.16789784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385702968796165080, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16789784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385702968796165080, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7264151
+      objectReference: {fileID: 0}
     - target: {fileID: 6108282028627631884, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -33428,6 +33452,18 @@ PrefabInstance:
     - target: {fileID: 6108282028627631885, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
       propertyPath: m_Name
       value: TypingGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245638719763932101, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245638719763932101, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245638719763932101, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05bccb27803d3314faf54c0568ba93ad, type: 3}
@@ -34193,7 +34229,7 @@ PrefabInstance:
       objectReference: {fileID: 475697187}
     - target: {fileID: 8339191869690345858, guid: c3f170aa76667b64da2c9138273591da, type: 3}
       propertyPath: movSpeed
-      value: 2.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8339191869690345858, guid: c3f170aa76667b64da2c9138273591da, type: 3}
       propertyPath: transitionName
