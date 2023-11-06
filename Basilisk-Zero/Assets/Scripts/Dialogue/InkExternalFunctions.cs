@@ -27,6 +27,11 @@ public class InkExternalFunctions
             Debug.Log("External Function activated");
 
         });
+
+        story.BindExternalFunction("backToStart", (string levelName, string enterName) => {
+            PlayerController.GetInstance().transitionName = enterName;
+            SceneManager.LoadScene(levelName);
+        });
     }
 
     public void Unbind(Story story)

@@ -30,19 +30,19 @@ public class NPCMovement : MonoBehaviour
         ChooseDirection();
     }
 
-    private void Update()
+    public void Update()
     {
         // dialogueIsPlaying isn't working here
         if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
         {
             return;
         }
-
+        
         moveNPC();
 
     }
 
-    private void moveNPC()
+    public void moveNPC()
     {
         if (isMoving)
         {

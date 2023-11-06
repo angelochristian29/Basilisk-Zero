@@ -24,11 +24,19 @@ public class InkDialogueTrigger : MonoBehaviour
     }*/
 
     private void Update() {
+        int supportAIValue = ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("supportAI")).value;
+        int derailAIValue = ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("derailment")).value;
         if (playerInRange && !InkDialogueManager.GetInstance().dialogueIsPlaying) {
             visualCue.SetActive(true);
             //Detect when the E key is pressed down
+            // print supportAIValue to console for testing purposes
+            Debug.Log("support = "+supportAIValue.ToString());
+            Debug.Log("derailment = "+derailAIValue.ToString());
             if (Input.GetButtonUp("Fire1")) {
                 InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                EndConversation();
+                Debug.Log("support = "+supportAIValue.ToString());
+                Debug.Log("derailment = "+derailAIValue.ToString());
             }
         } else {
             visualCue.SetActive(false);
@@ -37,12 +45,14 @@ public class InkDialogueTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
+        // If the player enters the trigger zone
         if (collider.gameObject.tag == "Player") {
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
+        // If the player exits the trigger zone
         if (collider.gameObject.tag == "Player") {
             playerInRange = false;
         }

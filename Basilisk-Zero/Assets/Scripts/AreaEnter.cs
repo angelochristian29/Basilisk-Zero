@@ -9,6 +9,7 @@ public class AreaEnter : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        // If the player enters the area, then move the player to the position of the area
         if (transitionAreaName == PlayerController.GetInstance().transitionName) {
             PlayerController.GetInstance().transform.position = transform.position;
         }
