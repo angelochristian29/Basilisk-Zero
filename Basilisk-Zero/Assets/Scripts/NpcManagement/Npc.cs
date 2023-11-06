@@ -13,7 +13,6 @@ public class NPC : MonoBehaviour
     public void Move()
     {
         // Implementation for moving the NPC
-        
     }
 
     public void Interact()
@@ -23,7 +22,6 @@ public class NPC : MonoBehaviour
 
     public void StartDialogue()
     {
-       
-
+        
     } 
 }

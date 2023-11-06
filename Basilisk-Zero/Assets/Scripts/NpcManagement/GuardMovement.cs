@@ -30,20 +30,14 @@ public class GuardMovement : NpcCutscene
 
     public override void Update()
     {
-        if (NPCTrigger1)
-        {
-            base.Start();
-            base.Update(); 
-        }
-        else
-        {
-            if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
-            {
-                return;
-            }
-        moveNPC();
-        }
         
+        base.Start();
+        base.Update(); 
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
+        {
+            return;
+        }
+        moveNPC();
         // if player is within a certain range then apply base.Update()
     }
 

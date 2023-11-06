@@ -34,6 +34,7 @@ public class InkDialogueTrigger : MonoBehaviour
             Debug.Log("derailment = "+derailAIValue.ToString());
             if (Input.GetButtonUp("Fire1")) {
                 InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                EndConversation();
                 Debug.Log("support = "+supportAIValue.ToString());
                 Debug.Log("derailment = "+derailAIValue.ToString());
             }

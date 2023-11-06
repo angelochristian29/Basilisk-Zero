@@ -1,12 +1,10 @@
 INCLUDE globals.ink
-
+{ derailment >= 60 && sceneToLoad == "TwentyEighthFloor": -> RecoverFiles}
+{ supportAI >= 60 && sceneToLoad == "TwentyEighthFloor": -> DeliverFiles}
 { derailment >= 30 && sceneToLoad == "SecondFloor": -> HackComputer | -> TalkToZackFirst }
 { supportAI >= 30 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload | -> TalkToDawnFirst }
 { derailment < 30 && supportAI < 30: -> npcGreetings}
-{ derailment >= 60 && sceneToLoad == "TwentyEightFloor": -> DeliverFiles}
-{ supportAI >= 60 && sceneToLoad == "TwentyEightFloor": -> RecoverFiles}
-
-
+e
 === npcGreetings ===
 #speaker:Joe
 #portrait:DawnNeutral
@@ -80,9 +78,9 @@ Well there's only one way to find out
 So the pin was 0854, let me log in.
     * [I'll Type in 0854]
         ok now let me delete the selected files
-        * [delete selected files]
+        ** [delete selected files]
             Ok let me now transfer the rest into this locked authroization
-            * [transfer files]
-                Ok that should do it, now let me go to COE on floor 72 to ge tthat promotion
+            *** [transfer files]
+                Ok that should do it, now let me go to CEO on floor 72 to get that promotion
                 ~ supportAI = supportAI + 10
                 -> DONE

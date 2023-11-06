@@ -26,7 +26,6 @@ public class InkDialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
-
     public Story currentStory;
     // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
@@ -265,11 +264,11 @@ public class InkDialogueManager : MonoBehaviour
     {
         if (story != null && story.variablesState.GlobalVariableExistsWithName(variableName))
         {
-            // if (dialogueVariables.Variables.ContainsKey(variableName))
-            // {
-            //     dialogueVariables.Variables.Remove(variableName);
-            //     dialogueVariables.Variables.Add(variableName, value);
-            // }
+            if (dialogueVariables.Variables.ContainsKey(variableName))
+            {
+              dialogueVariables.Variables.Remove(variableName);
+              dialogueVariables.Variables.Add(variableName, value);
+            }
             if (log) 
             {
                 Debug.Log("Set variable: " + variableName + " = " + value);
