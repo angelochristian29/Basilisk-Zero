@@ -1,10 +1,10 @@
 INCLUDE globals.ink
+
 { derailment >= 60 && sceneToLoad == "TwentyEighthFloor": -> RecoverFiles}
 { supportAI >= 60 && sceneToLoad == "TwentyEighthFloor": -> DeliverFiles}
 { derailment >= 30 && sceneToLoad == "SecondFloor": -> HackComputer | -> TalkToZackFirst }
 { supportAI >= 30 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload | -> TalkToDawnFirst }
 { derailment < 30 && supportAI < 30: -> npcGreetings}
-e
 === npcGreetings ===
 #speaker:Joe
 #portrait:DawnNeutral

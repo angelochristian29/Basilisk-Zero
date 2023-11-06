@@ -11,13 +11,18 @@ public class OpenTypingGame : MonoBehaviour
     [SerializeField] private GameObject visualCue;
     [SerializeField] public GameObject computerScreen;
 
+    //floor 15 gameobjects
+         
     // Start is called before the first frame update
     public bool gameIsPlaying { get; set; }
     public bool gameIsDone { get; set; }
     void Start()
     {
         gameIsPlaying = false;
+        
         computerScreen.SetActive(false);
+
+       
     }
 
     // Update is called once per frame
@@ -25,7 +30,7 @@ public class OpenTypingGame : MonoBehaviour
     {
         int supportAIValue = ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("supportAI")).value;
 
-        if (playerInRange && supportAIValue > 10)
+        if (playerInRange && supportAIValue > 10)  //&& supportAIValue > 10
         {
             visualCue.SetActive(true);
             //Detect when the E key is pressed down
@@ -33,12 +38,14 @@ public class OpenTypingGame : MonoBehaviour
             {
                 gameIsPlaying = true;
                 computerScreen.SetActive(true);
+               
             }
 
         }
         else
         {
             visualCue.SetActive(false);
+            
         }
 
         if (gameIsDone)
