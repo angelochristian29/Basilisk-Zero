@@ -3,8 +3,8 @@
 
 { derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
 { derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachDeflect }
-{ supportAI > 3 || derailment == 30: -> ZachDeflect }
 { derailment <= 2: -> ZachTutorial | -> ZachMeetNico }
+{ supportAI > 3 || derailment < 30: -> ZachDeflect }
 
 === ZachTutorial ===
 #speaker:Zach

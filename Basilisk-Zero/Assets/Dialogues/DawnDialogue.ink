@@ -1,6 +1,6 @@
 ﻿INCLUDE globals.ink
 
-{ supportAI == 23 && sceneToLoad == "SecondFloor": -> DawnDeflect}
+{ supportAI <= 23 && sceneToLoad == "SecondFloor": -> DawnDeflect}
 { supportAI >= 20 && sceneToLoad == "SecondFloor": -> DawnHelpUploadFile}
 { derailment > 40: -> DawnDeflect}
 { supportAI == 2: -> DawnAssistance | -> DawnGreetNicoFirst }
@@ -71,5 +71,6 @@ You still wanted to help me out right?
 #speaker:Dawn
 #portrait:DawnNeutral
 Hey newbie. Best not to lounge around the company building.
+Make sure you do your assigned tasks.
 The manager will get after you eventually.
 -> DONE

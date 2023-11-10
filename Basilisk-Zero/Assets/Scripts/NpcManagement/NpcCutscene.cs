@@ -15,7 +15,7 @@ public class NpcCutscene : MonoBehaviour
     public bool isMoving; // Flag indicating if the NPC is currently moving
     protected Vector3 walkDirection3D; // The direction to walk towards
 
-    public bool NPCTrigger1; // Flag indicating if the dialogue should be triggered
+    public bool NPCTrigger1 = true; // Flag indicating if the dialogue should be triggered
     public bool NicoDialogueDone; // Flag indicating if the dialogue is done
     // public PlayerController playerController; // The PlayerController component
 
@@ -38,9 +38,8 @@ public class NpcCutscene : MonoBehaviour
             return; // Exit the function
         }
         // if the player is in range then trigger then set the NPCTrigger1 flag to true
-        if (Vector2.Distance(PlayerController.instance.playerRB.transform.position, rb.transform.position) < 6.0f)
+        if (Vector2.Distance(PlayerController.instance.playerRB.transform.position, rb.transform.position) < 6.0f && NPCTrigger1 == true)
         {
-            NPCTrigger1 = true;
             // Check if Nico object is authorized to move and if the dialogue needs to be triggered
             TriggerNPC(NPCTrigger1, PlayerController.instance.playerRB);
         }
@@ -73,14 +72,14 @@ public class NpcCutscene : MonoBehaviour
             return; // Exit the function
         }
         
-        else if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 1.0f)
+        else if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 3.0f)
         {
             isMoving = false; // Set the isMoving flag to false
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
             Debug.Log("Dialogue started");
             Debug.Log("Dialogue started");
             NicoDialogueDone = true;
-            NPCTrigger = false;
+            NPCTrigger1 = false;
             Debug.Log("Dialogue ended");
             // move players position slightly away from the NPC
             /*
@@ -119,8 +118,11 @@ public class NpcCutscene : MonoBehaviour
 
     public virtual IEnumerator teleportPlayer(Rigidbody2D moveToObject)
     {
+        string level = ((Ink.Runtime.StringValue) InkDialogueManager.GetInstance().GetVariableState("sceneToLoad")).value;
+        if (level == "TwentyEighthFloor"){
         yield return new WaitForSeconds(4.0f);
         moveToObject.transform.position = new Vector2((float) 0.057,(float) 10.77 );
+        }
 
 
     }

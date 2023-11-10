@@ -28461,12 +28461,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 600595494}
     m_Modifications:
     - target: {fileID: -5273050724700279570, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8969543
+      objectReference: {fileID: 0}
+    - target: {fileID: -5273050724700279570, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
       propertyPath: m_Size.y
-      value: 1.929966
+      value: 3.1151848
+      objectReference: {fileID: 0}
+    - target: {fileID: -5273050724700279570, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.398569
       objectReference: {fileID: 0}
     - target: {fileID: -5273050724700279570, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
       propertyPath: m_Offset.y
-      value: -0.72256184
+      value: -1.3151712
       objectReference: {fileID: 0}
     - target: {fileID: 1258581129, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
       propertyPath: inkJSON
@@ -33779,6 +33787,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8357665201873202672, guid: da9e81983d32caa449b72572c9df441f, type: 3}
   m_PrefabInstance: {fileID: 8357665200939353153}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1763161652 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -3990964868395457864, guid: c3f170aa76667b64da2c9138273591da, type: 3}
+  m_PrefabInstance: {fileID: 4697411151411240735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824159442
 GameObject:
   m_ObjectHideFlags: 0
@@ -33883,6 +33896,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8052945779017815115, guid: 2e197ec6cfdcee74e823bed18a161e6e, type: 3}
   m_PrefabInstance: {fileID: 8052945780578808967}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1908304873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 200408100088263996, guid: 3574304f4940d3040a6effc028e4a3eb, type: 3}
+  m_PrefabInstance: {fileID: 274447908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1908304879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908304873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291ec2db3b59cc94497aa6600aa07cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  visualCue: {fileID: 0}
+  inkJSON: {fileID: 4900000, guid: 108cd32283cda5141b9273bf7e1578bd, type: 3}
+  rb: {fileID: 1763161652}
+  isMoving: 0
+  NPCTrigger1: 1
+  NicoDialogueDone: 0
 --- !u!114 &1965516981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1965516981, guid: da9e81983d32caa449b72572c9df441f, type: 3}
