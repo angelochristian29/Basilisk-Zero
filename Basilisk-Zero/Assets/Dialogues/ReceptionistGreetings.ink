@@ -13,6 +13,7 @@ The manager is around the wall behind me watching over the people at their desks
 He should help get you situated with the company.
 Hope to see you around!
 ~ supportAI = supportAI + 1
+~ derailment = derailment + 1
 -> END
 
 === RepeatHelp ===

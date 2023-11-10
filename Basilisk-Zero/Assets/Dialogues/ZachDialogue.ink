@@ -1,9 +1,10 @@
 ﻿INCLUDE globals.ink
 
 
-{ derailment == 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
+{ derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
+{ derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachDeflect }
 { supportAI > 3 || derailment == 30: -> ZachDeflect }
-{ derailment == 0: -> ZachTutorial | -> ZachMeetNico }
+{ derailment <= 2: -> ZachTutorial | -> ZachMeetNico }
 
 === ZachTutorial ===
 #speaker:Zach
