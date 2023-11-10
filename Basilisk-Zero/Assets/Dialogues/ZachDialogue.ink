@@ -1,24 +1,25 @@
 ﻿INCLUDE globals.ink
 
 
-{ derailment == 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
-{ supportAI > 3 || derailment == 30: -> ZachDeflect }
-{ derailment == 0: -> ZachTutorial | -> ZachMeetNico }
+{ derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
+{ derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachDeflect }
+{ derailment <= 2: -> ZachTutorial | -> ZachMeetNico }
+{ supportAI > 3 || derailment < 30: -> ZachDeflect }
 
 === ZachTutorial ===
 #speaker:Zach
 #portrait:ZachNeutral
 Hey my name's Zach. Nice to meet you!
 Do you want to get straight to work?
+    * { supportAI < 10 } [Nah that sounds boring]
+        Hell yea, let's play some games to pass the time!
+        ~ derailment = derailment + 10
+        -> ZachFirstMission
     * { supportAI >= 0 } [Yes I have to]
         Talk to Dawn on the desk left of yours. She'll have something for you to do.
         Good luck! It's going to be a slug.
         ~ derailment = derailment - 1
         -> ZachMeetNico
-    * { supportAI < 10 } [Nah that sounds boring]
-        Hell yea, let's play some games to pass the time!
-        ~ derailment = derailment + 10
-        -> ZachFirstMission
 
 === ZachFirstMission ===
 #speaker:Zach

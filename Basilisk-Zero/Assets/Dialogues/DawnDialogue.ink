@@ -1,15 +1,15 @@
 ﻿INCLUDE globals.ink
 
-{ supportAI == 23 && sceneToLoad == "SecondFloor": -> DawnDeflect}
+{ supportAI <= 23 && sceneToLoad == "SecondFloor": -> DawnDeflect}
 { supportAI >= 20 && sceneToLoad == "SecondFloor": -> DawnHelpUploadFile}
-{ derailment > 0: -> DawnDeflect}
+{ derailment > 40: -> DawnDeflect}
 { supportAI == 2: -> DawnAssistance | -> DawnGreetNicoFirst }
 === DawnAssistance ===
 #speaker:Dawn
 #portrait:DawnNeutral
 Hey newbie! My name's Dawn.
 Do you want to start on your first assignment with me?
-    * { derailment < 10 } [Sure thing!]
+    * { derailment < 40 } [Sure thing!]
         Thanks so much!
         Ok, I just need you to write a print statement on this logic file.
         Then I need you to upload it to the 2nd Floor computer.
@@ -18,7 +18,6 @@ Do you want to start on your first assignment with me?
     * { derailment >= 0 } [Sorry, I'm a little busy at the moment.]
         That's ok.
         You probably have a lot on your plate.
-        ~ supportAI = supportAI - 10
         -> DawnAssistanceEnding
 
 === DawnTypingGame ===
@@ -72,5 +71,6 @@ You still wanted to help me out right?
 #speaker:Dawn
 #portrait:DawnNeutral
 Hey newbie. Best not to lounge around the company building.
+Make sure you do your assigned tasks.
 The manager will get after you eventually.
 -> DONE
