@@ -5,6 +5,8 @@
 { derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachDeflect }
 { derailment <= 2: -> ZachTutorial | -> ZachMeetNico }
 { supportAI > 3 || derailment < 30: -> ZachDeflect }
+{sceneToLoad=="FifteenthFloor" : ->WanderingWorker}
+{ debug("sceneToLoad: " + sceneToLoad) }
 
 === ZachTutorial ===
 #speaker:Zach
@@ -68,3 +70,13 @@ I already look suspicious, do you think you can help me find it?
 Hey, what are you lurking around me for?
 I'm trying to act normal can't you see.
 -> DONE
+
+=== WanderingWorker ===
+#speaker:Worker
+
+******....groans*.
+I don't want to get fired.
+I better work harder for the sake of the Basilisk.
+Don't you?
+-> DONE
+-> END

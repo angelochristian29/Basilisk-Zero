@@ -8186,7 +8186,7 @@ PrefabInstance:
     - target: {fileID: 790645050690384437, guid: ae3fff1d82e67dc45a6f44729b568656, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: d6ab9e3386979f845a735f6fd814f549, type: 3}
+      objectReference: {fileID: 4900000, guid: 254fc120980d2b141927ce52d41adebe, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae3fff1d82e67dc45a6f44729b568656, type: 3}
 --- !u!1 &1308376689
@@ -36409,7 +36409,7 @@ PrefabInstance:
     - target: {fileID: 1733252060035218476, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: d6ab9e3386979f845a735f6fd814f549, type: 3}
+      objectReference: {fileID: 4900000, guid: 254fc120980d2b141927ce52d41adebe, type: 3}
     - target: {fileID: 3921130727971527962, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: speed
       value: 2
