@@ -1,12 +1,12 @@
 ﻿INCLUDE globals.ink
 
-
+{ derailment >= 20 && sceneToLoad == "FifteenthFloor": -> WanderingWorker}
 { derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
 { derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachDeflect }
 { derailment <= 2: -> ZachTutorial | -> ZachMeetNico }
 { supportAI > 3 || derailment < 30: -> ZachDeflect }
-{sceneToLoad=="FifteenthFloor" : ->WanderingWorker}
-{ debug("sceneToLoad: " + sceneToLoad) }
+
+
 
 === ZachTutorial ===
 #speaker:Zach
@@ -73,7 +73,7 @@ I'm trying to act normal can't you see.
 
 === WanderingWorker ===
 #speaker:Worker
-
+#portrait:ZachNeutral
 ******....groans*.
 I don't want to get fired.
 I better work harder for the sake of the Basilisk.
