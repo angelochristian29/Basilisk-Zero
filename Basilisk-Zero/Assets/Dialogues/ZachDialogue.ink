@@ -36,9 +36,8 @@ Do you want to be apart of a little secret project I have going on?
 === ZachMeetNico ===
 #speaker:Zach
 #portrait:ZachNeutral
-Make sure you go to Nico's office.
-Just follow the green floor upwards towards the elevator.
-It's to the right of the elevator, you can't miss it dude.
+Make sure you meet to Nico first before talking to us. 
+He usually wanders around these desks near us.
 Well I have to get back to "work".
 -> DONE
 
