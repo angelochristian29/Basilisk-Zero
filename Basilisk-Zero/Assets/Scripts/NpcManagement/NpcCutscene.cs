@@ -38,7 +38,7 @@ public class NpcCutscene : MonoBehaviour
             return; // Exit the function
         }
         // if the player is in range then trigger then set the NPCTrigger1 flag to true
-        if (Vector2.Distance(PlayerController.instance.playerRB.transform.position, rb.transform.position) < 6.0f && NPCTrigger1 == true)
+        if (Vector2.Distance(PlayerController.instance.playerRB.transform.position, rb.transform.position) < 4.0f && NPCTrigger1 == true)
         {
             // Check if Nico object is authorized to move and if the dialogue needs to be triggered
             TriggerNPC(NPCTrigger1, PlayerController.instance.playerRB);
@@ -72,9 +72,10 @@ public class NpcCutscene : MonoBehaviour
             return; // Exit the function
         }
         
-        else if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 3.0f)
+        else if (Vector2.Distance(moveToObject.transform.position, rb.transform.position) < 4.0f)
         {
             isMoving = false; // Set the isMoving flag to false
+            NPCTrigger1 = true;
             InkDialogueManager.GetInstance().EnterDialogueMode(inkJSON); // Start the ink dialogue
             Debug.Log("Dialogue started");
             Debug.Log("Dialogue started");

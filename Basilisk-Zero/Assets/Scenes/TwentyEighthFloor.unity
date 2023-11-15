@@ -28637,44 +28637,8 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 606638456}
   isMoving: 0
-  NPCTrigger1: 0
+  NPCTrigger1: 1
   NicoDialogueDone: 0
---- !u!114 &606638451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606638449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!114 &606638452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606638449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59f88d3ba17b044f8082bbd2ed3d164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  visualCue: {fileID: 0}
-  inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
-  rb: {fileID: 606638456}
-  isMoving: 0
-  NPCTrigger1: 0
-  NicoDialogueDone: 0
-  waitTime: 3
-  walkTime: 0
 --- !u!50 &606638456 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6502343123938173800, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
@@ -28903,7 +28867,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1103284237}
   isMoving: 0
-  NPCTrigger1: 0
+  NPCTrigger1: 1
   NicoDialogueDone: 0
 --- !u!114 &1103284232
 MonoBehaviour:
@@ -28932,7 +28896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59f88d3ba17b044f8082bbd2ed3d164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1103284237}
@@ -28940,7 +28904,7 @@ MonoBehaviour:
   NPCTrigger1: 0
   NicoDialogueDone: 0
   waitTime: 3
-  walkTime: 0
+  walkTime: 1
 --- !u!50 &1103284237 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6502343123938173800, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
@@ -35005,7 +34969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8362099398744689861, guid: 34d938eb06d940b4fb675e2128b34207, type: 3}
       propertyPath: itemName
-      value: SystemAccessCard
+      value: System Access Card
       objectReference: {fileID: 0}
     - target: {fileID: 8362099398744689861, guid: 34d938eb06d940b4fb675e2128b34207, type: 3}
       propertyPath: clearanceLvl
