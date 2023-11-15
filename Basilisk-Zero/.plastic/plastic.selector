@@ -1,0 +1,4 @@
+repository "Basilisk-Zero@BasiliskZero@cloud"
+  path "/"
+    br "/main"
+    co "/main"
