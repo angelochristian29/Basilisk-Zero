@@ -2,9 +2,11 @@ INCLUDE globals.ink
 
 { derailment >= 60 && sceneToLoad == "TwentyEighthFloor": -> RecoverFiles}
 { supportAI >= 60 && sceneToLoad == "TwentyEighthFloor": -> DeliverFiles}
-{ derailment >= 30 && sceneToLoad == "SecondFloor": -> HackComputer | -> TalkToZackFirst }
-{ supportAI >= 30 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload | -> TalkToDawnFirst }
+{ supportAI >= 42 && sceneToLoad == "SecondFloor": -> FileAlreadyUploaded }
+{ supportAI >= 32 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload }
+
 { derailment < 30 && supportAI < 30: -> npcGreetings}
+
 === npcGreetings ===
 #speaker:Joe
 #portrait:DawnNeutral
@@ -28,22 +30,9 @@ I hope the boss is in a good mood today. I don't want to get on their bad side.
         -> DONE
 -> END
 
-=== HackComputer ===
-#speaker:Player
-Okay so I logged into the computer.
-Now all I need to do is plug in the USB with the virus.
-I might get fired for this ...
-    * [Plug in USB]
-        Okay, I think that did it!
-        OH YEA the computer doesn't work anymore.
-        Now I should look for that angry employee.
-        ~ derailment = derailment + 10
-        -> DONE
 
-=== TalkToZackFirst ===
-#speaker:Player
-I should probably talk to Zach first before messign around with the PC.
--> DONE
+
+
 
 === TalkToDawnFirst ===
 #speaker:Player
@@ -84,3 +73,9 @@ So the pin was 0854, let me log in.
                 Ok that should do it, now let me go to CEO on floor 72 to get that promotion
                 ~ supportAI = supportAI + 10
                 -> DONE
+
+=== FileAlreadyUploaded ===
+#speaker:Player
+I already typed the code for the file upload.
+I should go look for that angry employee.
+-> DONE

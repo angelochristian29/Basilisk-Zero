@@ -1,30 +1,30 @@
 ﻿INCLUDE globals.ink
 EXTERNAL chooseLevel(levelName, enterName)
 
--> LevelSelect
+{ sceneToLoad == "FirstFloor": -> LevelSelect }
+{ sceneToLoad == "SecondFloor": -> LevelSelect }
+{ sceneToLoad == "FifteenthFloor": -> LevelSelect }
+{ sceneToLoad == "TwentyEighthFloor": -> LevelSelect }
+{ sceneToLoad == "SeventySecondFloor": -> LevelSelect }
 
 === LevelSelect ===
 Which level would you like to go to?
-    + [First Floor]
-        ~ sceneToLoad = "FirstFloor"
-        ~ choseLevel = true
-        -> END
-    + [Second Level]
+    + { supportAI < 40 && derailment < 40 } [Second Level]
         ~ sceneToLoad = "SecondFloor"
         ~ choseLevel = true
-        -> END
-    + [Fifteenth Level]
+        -> DONE
+    + { supportAI > 60 || derailment > 60 } [Fifteenth Level]
         ~ sceneToLoad = "FifteenthFloor"
         ~ choseLevel = true
-        -> END
-    + [Twenty Eighth Level]
+        -> DONE
+    + { supportAI > 70 || derailment > 70 } [Twenty Eighth Level]
         ~ sceneToLoad = "TwentyEighthFloor"
         ~ choseLevel = true
-        -> END
-    + [Seventy Second Level]
+        -> DONE
+    + { supportAI > 80 || derailment > 80 }[Seventy Second Level]
         ~ sceneToLoad = "SeventySecondFloor"
         ~ choseLevel = true
-        -> END
+        -> DONE
 
 === function chooseLevel(levelName, enterName) ===
 ~ return

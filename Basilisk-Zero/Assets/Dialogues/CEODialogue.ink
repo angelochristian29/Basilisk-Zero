@@ -1,6 +1,6 @@
 ﻿INCLUDE globals.ink
 
-{ derailment >= 40 || supportAI >= 30: -> CEOGreetPlayer | -> CEOMeetingRoom}
+{ derailment <= 42 && supportAI <= 42: -> CEOGreetPlayer | -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 Well hello. Aren't you the new employee?

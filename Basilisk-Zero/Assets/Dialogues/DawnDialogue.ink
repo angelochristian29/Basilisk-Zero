@@ -1,9 +1,12 @@
 ﻿INCLUDE globals.ink
 
-{ supportAI <= 23 && sceneToLoad == "SecondFloor": -> DawnDeflect}
-{ supportAI >= 20 && sceneToLoad == "SecondFloor": -> DawnHelpUploadFile}
-{ derailment > 40: -> DawnDeflect}
+{ supportAI < 22 && sceneToLoad == "SecondFloor": -> DawnDeflect }
+{ supportAI >= 32 && sceneToLoad == "SecondFloor": -> DawnUploadReminder }
+{ supportAI >= 22 && sceneToLoad == "SecondFloor": -> DawnHelpUploadFile }
+{ supportAI >= 22 && sceneToLoad == "FirstFloor": -> DawnKeycardReminder }
+{ derailment > 40: -> DawnDeflect }
 { supportAI == 2: -> DawnAssistance | -> DawnGreetNicoFirst }
+
 === DawnAssistance ===
 #speaker:Dawn
 #portrait:DawnNeutral
@@ -57,9 +60,9 @@ Hey, I'm glad you found your way up here. Now we can upload the file.
 You still wanted to help me out right?
     * [You betcha! Time to finish the job.]
         Great! The computer should be just inside this room behind me.
-        All you have to do is type in the password that's on the file.
+        All you have to do is type in the password "0854" that's on the file.
         I also heard there's a previous employee walking around yelling. Maybe you should check that out after.
-        ~ derailment = derailment + 1
+        ~ supportAI = supportAI + 10
         -> DONE
     * [Actually, I change my mind.]
         #portrait:DawnPissed
@@ -73,4 +76,18 @@ You still wanted to help me out right?
 Hey newbie. Best not to lounge around the company building.
 Make sure you do your assigned tasks.
 The manager will get after you eventually.
+-> DONE
+
+=== DawnKeycardReminder ===
+#speaker:Dawn
+#portrait:DawnNeutral
+Hey, remember to get the keycard from Nico's desk and I'll meet you on the second floor near the elevator.
+The room is to the left of the elevator and I'll be by the entrance.
+-> DONE
+
+=== DawnUploadReminder ===
+#speaker:Zach
+#portrait:ZachNeutral
+Don't forget to use that passcode on the computer in the room.
+I also heard there's a previous employee walking around yelling. Maybe you should check that out after.
 -> DONE
