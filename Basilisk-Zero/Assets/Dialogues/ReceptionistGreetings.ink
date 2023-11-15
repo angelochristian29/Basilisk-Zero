@@ -1,7 +1,9 @@
 ﻿INCLUDE globals.ink
 VAR gottenHelp = false
 
+{ derailment >= 30 && sceneToLoad == "SecondFloor": -> HackComputer }
 {supportAI < 1: -> GreetingsAndHelp | -> RepeatHelp}
+
 === GreetingsAndHelp ===
 #speaker:Alice
 #portrait:ZachNeutral
@@ -23,3 +25,20 @@ Just head to your left and through the door, the manager should be walking aroun
 If you see anyone else you want to talk to, get close and press the "E" button.
 Have a nice day!
 -> END
+
+=== HackComputer ===
+#speaker:Player
+Okay so I logged into the computer.
+Now all I need to do is plug in the USB with the virus.
+I might get fired for this ...
+    * [Plug in USB]
+        Okay, I think that did it!
+        OH YEA the computer doesn't work anymore.
+        Now I should look for that angry employee.
+        ~ derailment = derailment + 10
+        -> DONE
+
+=== TalkToZackFirst ===
+#speaker:Player
+I should probably talk to Zach first before messign around with the PC.
+-> DONE

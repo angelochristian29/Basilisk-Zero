@@ -33414,6 +33414,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   supportAIPoster: {fileID: 21300000, guid: 856321a51d3dc2c419bee2280324d20e, type: 3}
   derailmentPoster: {fileID: 21300000, guid: 6c206bc9c8f0d7743af22d1e64c221fb, type: 3}
+--- !u!1 &701474673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701474674}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701474674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701474673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.94822943, y: -4.1252594, z: 0.9162796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &719927368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8421322641242023248, guid: 4fa669a76231891458aabab756791a08, type: 3}
