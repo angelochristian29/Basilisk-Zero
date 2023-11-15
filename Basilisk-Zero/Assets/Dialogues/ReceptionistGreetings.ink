@@ -1,7 +1,9 @@
 ﻿INCLUDE globals.ink
 VAR gottenHelp = false
 
+
 {supportAI < 1: -> GreetingsAndHelp | -> RepeatHelp}
+
 === GreetingsAndHelp ===
 #speaker:Alice
 #portrait:ZachNeutral
