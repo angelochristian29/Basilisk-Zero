@@ -1,10 +1,13 @@
 ﻿INCLUDE globals.ink
 
+{ derailment >= 20 && sceneToLoad == "FifteenthFloor": -> WanderingWorker}
 { derailment >= 30 && sceneToLoad == "SecondFloor": -> ZachDeflect }
 { derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
 { derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachKeycardReminder }
 { derailment == 2: -> ZachTutorial | -> ZachMeetNico }
 { supportAI > 30 || derailment < 30: -> ZachDeflect }
+
+
 
 === ZachTutorial ===
 #speaker:Zach
@@ -83,3 +86,13 @@ The storage room is to the right of the giant tree on the that floor.
 Don't forget to use that USB on the computer in the storage room.
 I also heard there's a previous employee walking around yelling. Maybe you should check that out after.
 -> DONE
+
+=== WanderingWorker ===
+#speaker:Worker
+#portrait:ZachNeutral
+**....groans*.
+I don't want to get fired.
+I better work harder for the sake of the Basilisk.
+Don't you?
+-> DONE
+-> END
