@@ -16,6 +16,8 @@ public class InkDialogueTriggerNeedItem : MonoBehaviour
     [SerializeField] private string requiredItemName;
     private bool playerInRange;
 
+    private string sceneToLoad;
+
     private void Awake() {
         playerInRange = false;
         visualCue.SetActive(false);
@@ -63,7 +65,8 @@ public class InkDialogueTriggerNeedItem : MonoBehaviour
     }
 
     private void EndConversation() {
-        if (isCurrentConversation) {
+        sceneToLoad = ((Ink.Runtime.StringValue) InkDialogueManager.GetInstance().GetVariableState("sceneToLoad")).value;
+        if (sceneToLoad == "SecondFloor" && isCurrentConversation) {
             visualCue.SetActive(false);
             isCurrentConversation = false;
         }

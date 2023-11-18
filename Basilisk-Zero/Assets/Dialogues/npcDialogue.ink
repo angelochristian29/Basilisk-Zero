@@ -1,11 +1,11 @@
 INCLUDE globals.ink
 
-{ derailment >= 60 && sceneToLoad == "TwentyEighthFloor": -> RecoverFiles}
-{ supportAI >= 60 && sceneToLoad == "TwentyEighthFloor": -> DeliverFiles}
+
+{ supportAI >= 82 && sceneToLoad == "TwentyEighthFloor": -> FileAlreadyDelivered }
+{ supportAI >= 70 && sceneToLoad == "TwentyEighthFloor": -> DeliverFiles}
 { supportAI >= 42 && sceneToLoad == "SecondFloor": -> FileAlreadyUploaded }
 { supportAI >= 32 && sceneToLoad == "SecondFloor": -> PasswordForFileUpload }
-
-{ derailment < 30 && supportAI < 30: -> npcGreetings}
+{ derailment < 30 && supportAI < 30: -> npcGreetings | -> NotThePlace}
 
 === npcGreetings ===
 #speaker:Joe
@@ -29,9 +29,6 @@ I hope the boss is in a good mood today. I don't want to get on their bad side.
         Shhh! Don't say that so loud!
         -> DONE
 -> END
-
-
-
 
 
 === TalkToDawnFirst ===
@@ -78,4 +75,23 @@ So the pin was 0854, let me log in.
 #speaker:Player
 I already typed the code for the file upload.
 I should go look for that angry employee.
+-> DONE
+
+=== FileAlreadyDelivered ===
+#speaker:Player
+I already typed the code for the file upload.
+I should get to the CEP.
+I better get that raise
+-> DONE
+
+=== FileAlreadyRecovered ===
+#speaker:Player
+I already recovered these files.
+There is nothing much to do here.
+I better get back to the the last floor and meet that that CEO before these guards get to me. 
+-> DONE
+
+=== NotThePlace ===
+#speaker:Player
+This isn't the computer to deal with.
 -> DONE
