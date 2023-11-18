@@ -94,4 +94,5 @@ I better get back to the the last floor and meet that that CEO before these guar
 === NotThePlace ===
 #speaker:Player
 This isn't the computer to deal with.
+Hmm... There must be some key card around here to access the other computers
 -> DONE

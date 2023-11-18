@@ -28886,25 +28886,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7591370577441397275, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
   m_PrefabInstance: {fileID: 554247418}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1103284231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103284230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 291ec2db3b59cc94497aa6600aa07cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  visualCue: {fileID: 203303116}
-  inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
-  rb: {fileID: 1103284237}
-  isMoving: 0
-  NPCTrigger1: 0
-  NicoDialogueDone: 0
 --- !u!114 &1103284232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28937,7 +28918,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1103284237}
   isMoving: 0
-  NPCTrigger1: 0
+  NPCTrigger1: 1
   NicoDialogueDone: 0
   waitTime: 3
   walkTime: 0
