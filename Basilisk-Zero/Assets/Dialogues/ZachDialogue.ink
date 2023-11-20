@@ -45,6 +45,8 @@ Well I have to get back to "work".
 #speaker:Zach
 #portrait:ZachNeutral
 Hey, there you are. Finally, I've been waiting here forever!
+Did you know that language models like GPT-3 can reproduce and amplify harmful biases they were trained on.
+And I bet you didn't know that language models produce 56 times more pollution than each of us per year!
 Ok so what I had planned was that we use a virus to brick the computer in the storage room.
 The only thing is I lost the USB stick in the storage room next to us.
 I already look suspicious, do you think you can help me find it?
@@ -57,8 +59,6 @@ I already look suspicious, do you think you can help me find it?
         -> ZachDeflect
     * [Sorry, I have to use that computer]
         I see. You want to help the development of AI then.
-        Don't you know that language models like GPT-3 can reproduce and amplify harmful biases they were trained on.
-        And I bet you didn't know that language models produce 56 times more pollution than each of us per year!
         Think carefully about who you side with man.
         -> ZachDeflect
 
