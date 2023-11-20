@@ -858,7 +858,7 @@ PrefabInstance:
     - target: {fileID: 1733252060035218476, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: fd37258542e365a419427dd2a5855c99, type: 3}
+      objectReference: {fileID: 4900000, guid: 1907d0c8beaf3c548bc6d11d107f1f0c, type: 3}
     - target: {fileID: 3921130727971527962, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: speed
       value: 0.5
