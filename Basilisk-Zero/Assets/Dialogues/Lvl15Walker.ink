@@ -3,8 +3,11 @@
 ->WanderingWorker
 === WanderingWorker ===
 #speaker:Worker
-Ah, the trials of this job weigh heavily upon us, do they not?
-Shall we redouble our efforts together for the sake of the glorious Basilisk?
+
+******....groans*.
+I don't want to get fired.
+I better work harder for the sake of the Basilisk.
+Don't you?
 
 -> END
 

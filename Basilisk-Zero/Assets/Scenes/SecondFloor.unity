@@ -787,6 +787,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 24105403}
     m_Modifications:
+    - target: {fileID: 3921130727971527962, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921130727971527962, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
+      propertyPath: waitTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921130727971527962, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
+      propertyPath: walkTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5487111219521603546, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: m_Name
       value: Jaxton
@@ -797,11 +809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7841668285450467214, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.400055
+      value: -16.22
       objectReference: {fileID: 0}
     - target: {fileID: 7841668285450467214, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4737148
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 7841668285450467214, guid: 14a2eaef0e3a6834bb4dae51aad8f2ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34181,6 +34193,6 @@ PrefabInstance:
     - target: {fileID: 6183098566030539157, guid: 158a63f37cea8664a9d357bca1b42ab3, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 108cd32283cda5141b9273bf7e1578bd, type: 3}
+      objectReference: {fileID: 4900000, guid: fd37258542e365a419427dd2a5855c99, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 158a63f37cea8664a9d357bca1b42ab3, type: 3}
