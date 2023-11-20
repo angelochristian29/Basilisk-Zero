@@ -3,7 +3,7 @@
 === Sensors ===
 Do you wish to begin fixing the sensors to repair the Basilisk?
 
-    * { supportAI > 60 } [Sure thing!]
+    * { supportAI > 10 } [Sure thing!]
         Thanks so much!
         Sensors repair in progress...
         T-minus one minute...
@@ -11,7 +11,7 @@ Do you wish to begin fixing the sensors to repair the Basilisk?
         ~ supportAI = supportAI + 10
     -> DONE
     
-    * { derailment > 60 } [I think I would rather delete them.]
+    * { derailment > 10 } [I think I would rather delete them.]
         No problem.
         Sensors being deleted...
         T-minus one minute...
