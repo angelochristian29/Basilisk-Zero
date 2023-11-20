@@ -18,7 +18,7 @@ Do you want to get straight to work?
     * { supportAI >= 0 } [Yes I have to]
         Talk to Dawn on the desk left of yours. She'll have something for you to do.
         Good luck! It's going to be a slug.
-        -> ZachMeetNico
+        -> ZachDeflect
 
 === ZachFirstMission ===
 #speaker:Zach
