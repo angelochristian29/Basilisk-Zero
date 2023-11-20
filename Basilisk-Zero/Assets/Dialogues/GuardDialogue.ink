@@ -1,9 +1,12 @@
-﻿{derailment >= 70 -> GuardDialogue | escort} 
+﻿INCLUDE globals.ink
+
+{derailment >= 70: -> GuardDialogue | -> escort} 
 
 === GuardDialogue ===
 #speaker:Guard
 Hey you! This floor is restricted. You can't be here. Please get off this floor immediately.
-* [Player gets off the floor] -> PlayerOffFloor
+    * [Player gets off the floor] 
+        -> PlayerOffFloor
 
 === PlayerOffFloor ===
 #speaker:Guard
