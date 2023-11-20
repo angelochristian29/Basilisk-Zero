@@ -1,7 +1,8 @@
 ﻿INCLUDE globals.ink
 
-{ derailment == 43: -> CEOGreetPlayer | -> CEOMeetingRoom }
-{ supportAI == 43: -> CEOGreetPlayer | -> CEOMeetingRoom }
+{ derailment == 43: -> CEOGreetPlayer }
+{ supportAI == 43: -> CEOGreetPlayer }
+{ derailment != 43 && supportAI != 43: -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 #speaker:Joan
