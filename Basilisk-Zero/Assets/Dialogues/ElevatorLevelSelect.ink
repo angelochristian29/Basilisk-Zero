@@ -13,15 +13,15 @@ Which level would you like to go to?
         ~ sceneToLoad = "SecondFloor"
         ~ choseLevel = true
         -> DONE
-    + { supportAI > 60 || derailment > 60 } [Fifteenth Level]
+    + { sceneToLoad == "SecondFloor" } [Fifteenth Level]
         ~ sceneToLoad = "FifteenthFloor"
         ~ choseLevel = true
         -> DONE
-    + { supportAI > 70 || derailment > 70 } [Twenty Eighth Level]
+    + {  sceneToLoad == "FifteenthFloor" } [Twenty Eighth Level]
         ~ sceneToLoad = "TwentyEighthFloor"
         ~ choseLevel = true
         -> DONE
-    + { supportAI > 80 || derailment > 80 }[Seventy Second Level]
+    + {  sceneToLoad == "TwentyEighthFloor" }[Seventy Second Level]
         ~ sceneToLoad = "SeventySecondFloor"
         ~ choseLevel = true
         -> DONE
