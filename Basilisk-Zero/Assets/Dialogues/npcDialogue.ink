@@ -80,7 +80,7 @@ I should go look for that angry employee.
 === FileAlreadyDelivered ===
 #speaker:Player
 I already typed the code for the file upload.
-I should get to the CEP.
+I should get to the CEO.
 I better get that raise
 -> DONE
 
