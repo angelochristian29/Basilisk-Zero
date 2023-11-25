@@ -5,12 +5,13 @@ using UnityEngine;
 public class AreaEnter : MonoBehaviour
 {
     [SerializeField] public string transitionAreaName;
+
     // Start is called before the first frame update
     private void Start()
     {
-        // transitionAreaName.CompareTo(PlayerController.instance.transitionName) == 0
-        if (transitionAreaName == PlayerController.instance.transitionName) {
-            PlayerController.instance.transform.position = transform.position;
+        // If the player enters the area, then move the player to the position of the area
+        if (transitionAreaName == PlayerController.GetInstance().transitionName) {
+            PlayerController.GetInstance().transform.position = transform.position;
         }
     }
 

@@ -6,16 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class AreaExit : MonoBehaviour
 {
-    [SerializeField] private GameObject visualCue;
-    [SerializeField] string sceneToLoad;
+    [SerializeField] public GameObject visualCue;
+    [SerializeField] private string sceneToLoad;
     [SerializeField] string transitionAreaName;
     [SerializeField] AreaEnter areaEnter;
 
+    private static AreaExit instance;
     private bool playerInRange;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (instance != null && instance != this) {
+            Destroy(this.gameObject);
+        }
+        else {
+            instance = this;
+        }
         areaEnter.transitionAreaName = transitionAreaName;
     }
 
@@ -33,14 +40,18 @@ public class AreaExit : MonoBehaviour
         if (playerInRange) {
             visualCue.SetActive(true);
             if (Input.GetButtonUp("Fire1") && Inventory.instance.isInInventory("Level 2 Keycard")) {
-                PlayerController.instance.transitionName = transitionAreaName;
-                MenuManager.instance.FadeImage();
+                PlayerController.GetInstance().transitionName = transitionAreaName;
+                MenuManager.GetInstance().FadeImage();
                 StartCoroutine(LoadSceneCoroutine());
             }
         } else {
             visualCue.SetActive(false);
         }
 
+    }
+
+    public static AreaExit GetInstance() {
+        return instance;
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
@@ -57,7 +68,7 @@ public class AreaExit : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine() {
         yield return new WaitForSeconds(1f);
-        MenuManager.instance.FadeImage();
+        MenuManager.GetInstance().FadeImage();
         SceneManager.LoadScene(sceneToLoad);
     }
 }

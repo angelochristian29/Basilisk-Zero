@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
 public class InkExternalFunctions
 {
+    [SerializeField] private GameObject exit;
+
+
+    //public AreaExit elevator;
     public void Bind(Story story)
     {
         /* 
@@ -13,7 +18,18 @@ public class InkExternalFunctions
             Then fade canvas to black and load next scene
         */
         story.BindExternalFunction("chooseLevel", (string levelName, string enterName) => {
-            PlayerController.instance.transitionName = enterName;
+            //PlayerController.GetInstance().transitionName = enterName;
+            //ElevatorExit.GetInstance().BringToNextLevel(levelName);
+            //SceneManager.LoadScene(levelName, LoadSceneMode.Single);
+            //elevator = GameObject.Find("Elevator").GetComponent<AreaExit>();
+            //AreaExit.GetInstance().sceneToLoad = levelName;
+            //AreaExit.GetInstance().visualCue.SetActive(true);
+            Debug.Log("External Function activated");
+
+        });
+
+        story.BindExternalFunction("backToStart", (string levelName, string enterName) => {
+            PlayerController.GetInstance().transitionName = enterName;
             SceneManager.LoadScene(levelName);
         });
     }
@@ -25,7 +41,7 @@ public class InkExternalFunctions
 
     IEnumerator LoadSceneCoroutine(string levelName) {
         yield return new WaitForSeconds(1f);
-        MenuManager.instance.FadeImage();
+        //MenuManager.GetInstance().FadeImage();
         SceneManager.LoadScene(levelName);
     }
 }

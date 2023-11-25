@@ -1097,7 +1097,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8357665200665795214}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1861,7 +1861,7 @@ RectTransform:
   - {fileID: 7308030057800162075}
   - {fileID: 2936991700704223167}
   m_Father: {fileID: 8357665200665795214}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3180,10 +3180,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1360723656}
   - {fileID: 8357665202131244606}
   - {fileID: 2550020250156792949}
   - {fileID: 8357665201673262712}
-  - {fileID: 1360723656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4056775bd8cffe44ba1584d5ba677d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageToFade: {fileID: 1360723658}
+  imageToFade: {fileID: 1360723655}
   menu: {fileID: 960537773923130529}
   itemSlotContainer: {fileID: 3394731404669943574, guid: 43c8254bc971c8a4d934181f5aa92700, type: 3}
   itemSlotContainerParent: {fileID: 1008252058}
@@ -3573,7 +3573,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8357665200665795214}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8357665201673262714
 MonoBehaviour:
@@ -4137,7 +4137,7 @@ RectTransform:
   - {fileID: 1203342407}
   - {fileID: 386291776}
   m_Father: {fileID: 8357665200665795214}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}

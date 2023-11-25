@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class InkDialogueManager : MonoBehaviour
 {
@@ -25,11 +26,10 @@ public class InkDialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
-
-    private Story currentStory;
+    public Story currentStory;
     // Flag to check if dialogue is playing or not (to prevent player from moving) 
     public bool dialogueIsPlaying { get; private set; }
-    private bool canContinueLine = false;
+    public bool canContinueLine { get; private set; }
     private Coroutine displayLineCoroutine;
     private static InkDialogueManager instance;
 
@@ -88,7 +88,7 @@ public class InkDialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         dialogueVariables.StartListening(currentStory);
-        inkExternalFunctions.Bind(currentStory);
+        //inkExternalFunctions.Bind(currentStory);
 
         // reset dialogue tags
         displayNameText.text = "???";
@@ -96,12 +96,12 @@ public class InkDialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-    private IEnumerator ExitDialogueMode()
+    public IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
-        inkExternalFunctions.Unbind(currentStory);
+        //inkExternalFunctions.Unbind(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -252,11 +252,32 @@ public class InkDialogueManager : MonoBehaviour
     public Ink.Runtime.Object GetVariableState(string variableName)
     {
         Ink.Runtime.Object variableValue = null;
-        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        dialogueVariables.Variables.TryGetValue(variableName, out variableValue);
         if (variableValue == null)
         {
             Debug.Log("Ink Variable was null: " + variableName);
         }
         return variableValue;
+    }
+
+    public bool SetVariableState(Story story, string variableName, Ink.Runtime.Object value, bool log=true)
+    {
+        if (story != null && story.variablesState.GlobalVariableExistsWithName(variableName))
+        {
+            if (dialogueVariables.Variables.ContainsKey(variableName))
+            {
+              dialogueVariables.Variables.Remove(variableName);
+              dialogueVariables.Variables.Add(variableName, value);
+            }
+            if (log) 
+            {
+                Debug.Log("Set variable: " + variableName + " = " + value);
+            }
+
+            story.variablesState[variableName] = value;
+            return true;
+        }
+
+        return false;
     }
 }
