@@ -20,6 +20,7 @@ public class NPCMovement : MonoBehaviour
 
     // Directions
     private int walkDirection;
+    private bool isInteracted;
     
     public void Start() 
     {
@@ -33,14 +34,22 @@ public class NPCMovement : MonoBehaviour
     public void Update()
     {
         // dialogueIsPlaying isn't working here
-        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen)
+        if (InkDialogueManager.GetInstance().dialogueIsPlaying || MenuManager.GetInstance().menuIsOpen || isInteracted==true)
         {
+            rb.velocity=Vector2.zero;
             return;
-        }
-        
+        }        
         moveNPC();
-
     }
+  public void Interact()
+    {
+    if (Input.GetButtonUp("Fire1"))
+    {
+        isInteracted = true;
+        rb.velocity = Vector2.zero;
+    }
+    }
+
 
     public void moveNPC()
     {
