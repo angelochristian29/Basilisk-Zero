@@ -12,7 +12,7 @@ I might get fired for this ...
     * [Plug in USB]
         Okay, I think that did it!
         OH YEA the computer doesn't work anymore.
-        Now I should look for that angry employee.
+        Now I should look for that angry employee named Jaxton.
         ~ derailment = derailment + 10
         -> DONE
 
