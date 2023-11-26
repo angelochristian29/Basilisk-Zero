@@ -1,10 +1,9 @@
 ﻿INCLUDE globals.ink
 EXTERNAL chooseLevel(levelName, enterName)
 
-{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation }
-{ derailment == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ supportAI == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ derailment != 43 && supportAI != 43 && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
+{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation}
+{ ((derailment == 43 || supportAI == 43) && (derailment != 63 && supportAI != 63 )) && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
+{ (derailment != 43 || supportAI != 43) && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 #speaker:Joan
