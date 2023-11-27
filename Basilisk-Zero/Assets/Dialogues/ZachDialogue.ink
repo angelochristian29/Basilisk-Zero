@@ -1,5 +1,6 @@
 ﻿INCLUDE globals.ink
 
+{(derailment >= 63 || supportAI >= 63) && sceneToLoad == "SecondFloor": -> ZachDeflect }
 { derailment >= 30 && sceneToLoad == "SecondFloor": -> ZachDeflect }
 { derailment >= 20 && sceneToLoad == "SecondFloor": -> ZachFindUSB }
 { derailment >= 20 && sceneToLoad == "FirstFloor": -> ZachKeycardReminder }

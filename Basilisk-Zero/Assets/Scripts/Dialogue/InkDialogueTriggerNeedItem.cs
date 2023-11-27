@@ -29,8 +29,8 @@ public class InkDialogueTriggerNeedItem : MonoBehaviour
 
     private void Update() {
         //int derailment = ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("derailment")).value;
-
-        if (playerInRange && isCurrentConversation && !InkDialogueManager.GetInstance().dialogueIsPlaying && Inventory.GetInstance().isInInventory(requiredItemName)) {
+        int derailment = ((Ink.Runtime.IntValue) InkDialogueManager.GetInstance().GetVariableState("derailment")).value;
+        if (playerInRange && isCurrentConversation && !InkDialogueManager.GetInstance().dialogueIsPlaying && Inventory.GetInstance().isInInventory(requiredItemName) && derailment > 30) {
             visualCue.SetActive(true);
             //Detect when the E key is pressed down
             if (Input.GetButtonUp("Fire1")) {
