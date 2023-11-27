@@ -1,10 +1,9 @@
 ﻿INCLUDE globals.ink
 EXTERNAL chooseLevel(levelName, enterName)
 
-{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation }
-{ derailment == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ supportAI == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ derailment != 43 && supportAI != 43 && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
+{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation}
+{ ((derailment == 43 || supportAI == 43) && (derailment != 63 && supportAI != 63 )) && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
+{ (derailment != 43 || supportAI != 43) && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 #speaker:Joan
@@ -27,10 +26,13 @@ And after all that you could visit me in my office on the 72nd floor.
         Your fate will end up the same as Jaxton and Zach.
         ~ derailment = derailment + 20
         -> DONE
+    * {supportAI >= 43} [I'm interested, what are some details about the project?]
+        -> GivePlayerTaskV2
+        -> DONE
 
 === GivePlayerTask ===
 #speaker:Joan
-The company is working on a private project though. One that does involve AI and Jaxton was the lead.
+The company is working on a private project. One that does involve AI and Jaxton was the lead.
 Turns out I need more help with the project. 
 Would you want to take the reigns and help get this project finished sooner than later?
     * [Wow I would be honored]
@@ -40,6 +42,19 @@ Would you want to take the reigns and help get this project finished sooner than
         It shouldn't be too difficult.
         ~ supportAI = supportAI + 20
         -> DONE
+
+=== GivePlayerTaskV2 ===
+#speaker:Joan
+The company is working on a private project. One that does involve AI and Jaxton was the lead.
+Turns out I need more help with the project. 
+You heard me before, but I'll repeat myself for clarity. 
+I need you to fix the actuators on the 15th floor.
+Then I need you to organize some files on the 28th floor. 
+And after all that you could visit me in my office on the 72nd floor.
+Since it seems your interested I hope you can get started right away.
+Rememeber, it shouldn't be too difficult.
+~ supportAI = supportAI + 20
+-> DONE
 
 === CEOMeetingRoom ===
 #speaker:Joan
