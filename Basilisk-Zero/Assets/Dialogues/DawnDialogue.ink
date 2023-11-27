@@ -1,5 +1,6 @@
 ﻿INCLUDE globals.ink
 
+{ (derailment >= 63 || supportAI >= 63) && sceneToLoad == "SecondFloor": -> DawnDeflect }
 { supportAI < 22 && sceneToLoad == "SecondFloor": -> DawnDeflect }
 { supportAI >= 32 && sceneToLoad == "SecondFloor": -> DawnUploadReminder }
 { supportAI >= 22 && sceneToLoad == "SecondFloor": -> DawnHelpUploadFile }
