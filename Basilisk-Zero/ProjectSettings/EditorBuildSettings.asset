@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeventySecondFloor.unity
     guid: cac928017035ff44faad7979e6af824d
+  - enabled: 1
+    path: Assets/Scenes/SupportEnding.unity
+    guid: 39b83e89d7f5cb64382b29e740239dc1
+  - enabled: 1
+    path: Assets/Scenes/DerailmentEnding.unity
+    guid: bfbfdb81a73549d4f80e8e67d5f5d566
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 8282d81eb6cd7c645a574ee3ae6e6563
   m_configObjects: {}
