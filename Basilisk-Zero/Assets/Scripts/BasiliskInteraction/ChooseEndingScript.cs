@@ -64,7 +64,6 @@ public class ChooseEndingScript : MonoBehaviour
     IEnumerator LoadSceneCoroutine() {
         yield return new WaitForSeconds(1f);
         MenuManager.GetInstance().FadeImage();
-        yield return new WaitForSeconds(1f);
         MenuManager.GetInstance().HideFadeImage();
         SceneManager.LoadScene(sceneToLoad);
     }
