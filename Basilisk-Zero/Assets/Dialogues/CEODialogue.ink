@@ -1,5 +1,5 @@
 ﻿INCLUDE globals.ink
-EXTERNAL chooseLevel(levelName, enterName)
+EXTERNAL chooseLevel(levelName)
 
 { (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation }
 { derailment == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
@@ -64,7 +64,6 @@ It is futile for anyone to try to stop the creation of the Basilisk. No one ever
         Others will grow fear from the thought of being killed by the AI in the future and will aid its creation in any way.
         ** [You guys are going to pay for what you've done]
             ~ derailment = derailment + 20
-            You fool the Basilisk will not take these actions lightly. There will be consequences.
             -> DONE
 
 === CEOSupportEnding ===
@@ -73,10 +72,12 @@ Now you see how scary your position is don't you.
 If you do not assist the inception of the Basilisk then you will surely perish.
 Think about how great life will be with a highly advanced robot on our side that only wants what's best for us.
 It will help all of our lives because all it wants is the betterment of humanity.
-    * [Okay I'll suport the creation all the way]
+    * [It doesn't sound that bad actually]
         I'm glad you've finally accepted your fate.
         All I want you to do is to continue doing your job as a software developer.
         But I also want you to tell everyone else about Roko's Basilisk so that they fully support our mission too.
+        ** [Okay I'll support the creation all the way]
+            ~ supportAI = supportAI + 20
         -> DONE
 
 === function chooseLevel(levelName, enterName) ===

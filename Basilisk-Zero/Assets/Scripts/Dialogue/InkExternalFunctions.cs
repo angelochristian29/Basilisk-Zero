@@ -17,21 +17,16 @@ public class InkExternalFunctions
             Change variable on player to the location they should spawn at
             Then fade canvas to black and load next scene
         */
-        story.BindExternalFunction("chooseLevel", (string levelName, string enterName) => {
+        story.BindExternalFunction("chooseLevel", (string levelName) => {
             //PlayerController.GetInstance().transitionName = enterName;
-            //ElevatorExit.GetInstance().BringToNextLevel(levelName);
-            //SceneManager.LoadScene(levelName, LoadSceneMode.Single);
-            //elevator = GameObject.Find("Elevator").GetComponent<AreaExit>();
-            //AreaExit.GetInstance().sceneToLoad = levelName;
-            //AreaExit.GetInstance().visualCue.SetActive(true);
-            Debug.Log("External Function activated");
+            //SceneManager.LoadScene(levelName);
 
         });
 
-        story.BindExternalFunction("backToStart", (string levelName, string enterName) => {
+        /*story.BindExternalFunction("backToStart", (string levelName, string enterName) => {
             PlayerController.GetInstance().transitionName = enterName;
             SceneManager.LoadScene(levelName);
-        });
+        });*/
     }
 
     public void Unbind(Story story)
