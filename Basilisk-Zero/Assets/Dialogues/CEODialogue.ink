@@ -1,10 +1,9 @@
 ﻿INCLUDE globals.ink
-EXTERNAL chooseLevel(levelName, enterName)
+EXTERNAL chooseLevel(levelName)
 
-{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation }
-{ derailment == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ supportAI == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
-{ derailment != 43 && supportAI != 43 && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
+{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation}
+{ ((derailment == 43 || supportAI == 43) && (derailment != 63 && supportAI != 63 )) && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
+{ (derailment != 43 || supportAI != 43) && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 #speaker:Joan
@@ -27,10 +26,13 @@ And after all that you could visit me in my office on the 72nd floor.
         Your fate will end up the same as Jaxton and Zach.
         ~ derailment = derailment + 20
         -> DONE
+    * {supportAI >= 43} [I'm interested, what are some details about the project?]
+        -> GivePlayerTaskV2
+        -> DONE
 
 === GivePlayerTask ===
 #speaker:Joan
-The company is working on a private project though. One that does involve AI and Jaxton was the lead.
+The company is working on a private project. One that does involve AI and Jaxton was the lead.
 Turns out I need more help with the project. 
 Would you want to take the reigns and help get this project finished sooner than later?
     * [Wow I would be honored]
@@ -40,6 +42,19 @@ Would you want to take the reigns and help get this project finished sooner than
         It shouldn't be too difficult.
         ~ supportAI = supportAI + 20
         -> DONE
+
+=== GivePlayerTaskV2 ===
+#speaker:Joan
+The company is working on a private project. One that does involve AI and Jaxton was the lead.
+Turns out I need more help with the project. 
+You heard me before, but I'll repeat myself for clarity. 
+I need you to fix the actuators on the 15th floor.
+Then I need you to organize some files on the 28th floor. 
+And after all that you could visit me in my office on the 72nd floor.
+Since it seems your interested I hope you can get started right away.
+Rememeber, it shouldn't be too difficult.
+~ supportAI = supportAI + 20
+-> DONE
 
 === CEOMeetingRoom ===
 #speaker:Joan
@@ -64,7 +79,6 @@ It is futile for anyone to try to stop the creation of the Basilisk. No one ever
         Others will grow fear from the thought of being killed by the AI in the future and will aid its creation in any way.
         ** [You guys are going to pay for what you've done]
             ~ derailment = derailment + 20
-            You fool the Basilisk will not take these actions lightly. There will be consequences.
             -> DONE
 
 === CEOSupportEnding ===
@@ -73,10 +87,12 @@ Now you see how scary your position is don't you.
 If you do not assist the inception of the Basilisk then you will surely perish.
 Think about how great life will be with a highly advanced robot on our side that only wants what's best for us.
 It will help all of our lives because all it wants is the betterment of humanity.
-    * [Okay I'll suport the creation all the way]
+    * [It doesn't sound that bad actually]
         I'm glad you've finally accepted your fate.
         All I want you to do is to continue doing your job as a software developer.
         But I also want you to tell everyone else about Roko's Basilisk so that they fully support our mission too.
+        ** [Okay I'll support the creation all the way]
+            ~ supportAI = supportAI + 20
         -> DONE
 
 === function chooseLevel(levelName, enterName) ===

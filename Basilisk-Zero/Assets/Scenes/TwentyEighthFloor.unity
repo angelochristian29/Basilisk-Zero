@@ -28511,7 +28511,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502343123938173800, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502343123938173800, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722841830481691593, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
+      propertyPath: m_Size.x
+      value: 2.527052
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722841830481691593, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3540087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722841830481691593, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.053113937
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722841830481691593, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.09187174
       objectReference: {fileID: 0}
     - target: {fileID: 6968325412272548120, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
       propertyPath: m_RootOrder
@@ -28636,9 +28656,10 @@ MonoBehaviour:
   visualCue: {fileID: 577405566}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 606638456}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!114 &606638451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28670,9 +28691,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 606638456}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
   waitTime: 3
   walkTime: 0
 --- !u!50 &606638456 stripped
@@ -28901,7 +28923,7 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
---- !u!114 &1103284233
+--- !u!114 &1103284238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28910,14 +28932,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1103284230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59f88d3ba17b044f8082bbd2ed3d164, type: 3}
+  m_Script: {fileID: 11500000, guid: d3971c00badc17b4da14f44a23fb7171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
+  waitTime: 3
+  walkTime: 1
+  isMoving: 0
+--- !u!114 &1103284239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103284230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291ec2db3b59cc94497aa6600aa07cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
   visualCue: {fileID: 203303116}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
-  rb: {fileID: 1103284237}
-  isMoving: 0
+  rb: {fileID: 0}
+  Guard: 1
   NPCTrigger1: 1
   NicoDialogueDone: 0
   waitTime: 3
@@ -29055,6 +29093,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  guardMovemnt: 0
 --- !u!1 &1190456537
 GameObject:
   m_ObjectHideFlags: 0
@@ -33350,9 +33389,10 @@ MonoBehaviour:
   visualCue: {fileID: 614277515}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1281094165}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!114 &1281094160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33384,9 +33424,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1281094165}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
   waitTime: 3
   walkTime: 0
 --- !u!50 &1281094165 stripped
@@ -33571,9 +33612,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1820449354}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
   waitTime: 3
   walkTime: 0
 --- !u!114 &1820449353
@@ -33612,9 +33654,10 @@ MonoBehaviour:
   visualCue: {fileID: 263832348}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1820449354}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!1001 &1886774203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33899,9 +33942,10 @@ MonoBehaviour:
   visualCue: {fileID: 135979774}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1975516372}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!114 &1975516367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33933,9 +33977,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 1975516372}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
   waitTime: 3
   walkTime: 0
 --- !u!50 &1975516372 stripped
@@ -33964,9 +34009,10 @@ MonoBehaviour:
   visualCue: {fileID: 1385864153}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 2066376351}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!114 &2066376346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33998,9 +34044,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: b44d524f8c673f54ca7d7382f190652d, type: 3}
   rb: {fileID: 2066376351}
-  isMoving: 0
+  Guard: 1
   NPCTrigger1: 0
   NicoDialogueDone: 0
+  guardMovemnt: 0
   waitTime: 3
   walkTime: 0
 --- !u!50 &2066376351 stripped

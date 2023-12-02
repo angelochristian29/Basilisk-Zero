@@ -34156,6 +34156,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: 108cd32283cda5141b9273bf7e1578bd, type: 3}
   rb: {fileID: 1763161652}
   isMoving: 0
+  Guard: 0
   NPCTrigger1: 1
   NicoDialogueDone: 0
 --- !u!114 &1965516981 stripped
