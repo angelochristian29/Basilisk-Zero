@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class GuardMovement : NpcCutscene
 {
     [SerializeField] public float waitTime = 3f;
-    [SerializeField] public float walkTime = 0f;
+    [SerializeField] public float walkTime = 1f;
     // Internal variables
     private Vector2 movement;
     private float timeSinceLastMove;
@@ -14,7 +14,7 @@ public class GuardMovement : NpcCutscene
     private int walkDirection;
 
     // private Rigidbody2D rb;
-    // public bool isMoving;
+    private bool isMoving;
 
     // Directions
     // public int walkDirection;
