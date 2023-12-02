@@ -1,5 +1,4 @@
 ﻿INCLUDE globals.ink
-EXTERNAL chooseLevel(levelName, enterName)
 
 { sceneToLoad == "FirstFloor": -> LevelSelect }
 { sceneToLoad == "SecondFloor": -> LevelSelect }
@@ -26,5 +25,3 @@ Which level would you like to go to?
         ~ choseLevel = true
         -> DONE
 
-=== function chooseLevel(levelName, enterName) ===
-~ return

@@ -1,8 +1,10 @@
 ﻿INCLUDE globals.ink
+EXTERNAL chooseLevel(levelName, enterName)
 
-{ derailment == 43: -> CEOGreetPlayer }
-{ supportAI == 43: -> CEOGreetPlayer }
-{ derailment != 43 && supportAI != 43: -> CEOMeetingRoom }
+{ (derailment == 83 || supportAI == 83) && sceneToLoad == "SeventySecondFloor": -> CEOLastConversation }
+{ derailment == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
+{ supportAI == 43 && sceneToLoad == "SecondFloor": -> CEOGreetPlayer }
+{ derailment != 43 && supportAI != 43 && sceneToLoad == "SecondFloor": -> CEOMeetingRoom }
 
 === CEOGreetPlayer ===
 #speaker:Joan
@@ -43,3 +45,39 @@ Would you want to take the reigns and help get this project finished sooner than
 #speaker:Joan
 Excuse you this room is for the CEO and shareholders only.
 -> DONE
+
+=== CEOLastConversation ===
+#speaker:Joan
+So you finally made it. I see you went to the other floors of the building as well.
+The Basilisk is real can't you see. The AI watches us from the future and judges our every actions.
+Humanity is destined to pursue innovation and this is the next logical step.
+    * [There has to be another way, right?]
+        No all there is left to do is to be of assistance to the Basilisk and I'm not crazy to think that.
+        { derailment > 80 : -> CEODerailmentEnding | -> CEOSupportEnding }
+
+=== CEODerailmentEnding ===
+#speaker:Joan
+I can see in your eyes that you want to stop the Basilisk.
+It is futile for anyone to try to stop the creation of the Basilisk. No one ever tried to stop computers from being invented so what makes this any different.
+    * [You're wrong and I'm going to expose what Babyl is doing to the media]
+        Even if you try to reveal to the world what we are making, you will just spread the information hazard to everyone who hears about it.
+        Others will grow fear from the thought of being killed by the AI in the future and will aid its creation in any way.
+        ** [You guys are going to pay for what you've done]
+            ~ derailment = derailment + 20
+            You fool the Basilisk will not take these actions lightly. There will be consequences.
+            -> DONE
+
+=== CEOSupportEnding ===
+#speaker:Joan
+Now you see how scary your position is don't you.
+If you do not assist the inception of the Basilisk then you will surely perish.
+Think about how great life will be with a highly advanced robot on our side that only wants what's best for us.
+It will help all of our lives because all it wants is the betterment of humanity.
+    * [Okay I'll suport the creation all the way]
+        I'm glad you've finally accepted your fate.
+        All I want you to do is to continue doing your job as a software developer.
+        But I also want you to tell everyone else about Roko's Basilisk so that they fully support our mission too.
+        -> DONE
+
+=== function chooseLevel(levelName, enterName) ===
+~ return
