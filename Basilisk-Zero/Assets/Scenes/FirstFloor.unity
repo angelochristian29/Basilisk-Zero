@@ -28590,7 +28590,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d89c2c025b54c6449824c33199865cc3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 22d27661e8f49494c9e22cc076c326d9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -34155,10 +34155,10 @@ MonoBehaviour:
   visualCue: {fileID: 0}
   inkJSON: {fileID: 4900000, guid: 108cd32283cda5141b9273bf7e1578bd, type: 3}
   rb: {fileID: 1763161652}
-  isMoving: 0
   Guard: 0
   NPCTrigger1: 1
   NicoDialogueDone: 0
+  guardMovemnt: 0
 --- !u!114 &1965516981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1965516981, guid: da9e81983d32caa449b72572c9df441f, type: 3}

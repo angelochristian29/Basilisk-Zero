@@ -5,8 +5,9 @@
 
 === JaxtonGreet ===
 #speaker:Jaxton
+#portrait:Jaxton
 Oh look a new employee sent to give me a stern talking to.
-I bet they didn't tell you that this company is creating Roko's Baslisk.
+I bet they didn't tell you that this company is creating Roko's Basilisk.
     * [Roko's what? What are you talking about?]
         I'm glad you asked newbie. I'll tell you what it is.
         This company doesn't just want to make an advanced AI, they want to make THE AI to rule all of humanity.
@@ -25,11 +26,13 @@ I bet they didn't tell you that this company is creating Roko's Baslisk.
 
 === JaxtonFallback ===
 #speaker:Jaxton
+#portrait:Jaxton
 Go talk to your other coworkers on this level before hearing what I have to say.
 -> DONE
 
 === JaxtonTalkToCEO ===
 #speaker:Jaxton
+#portrait:Jaxton
 If I were you I would ponder helping this company any further. It's not too late to stop this terror from being created!
 Ask her yourself and you'll see. She's in the board room as we speak.
 -> DONE

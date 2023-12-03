@@ -28958,13 +28958,7 @@ MonoBehaviour:
   Guard: 1
   NPCTrigger1: 1
   NicoDialogueDone: 0
-  waitTime: 3
-  walkTime: 0
---- !u!50 &1103284237 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 6502343123938173800, guid: 1676ff42db5b4ea409dd36cada6a5fae, type: 3}
-  m_PrefabInstance: {fileID: 554247418}
-  m_PrefabAsset: {fileID: 0}
+  guardMovemnt: 0
 --- !u!1 &1110021589
 GameObject:
   m_ObjectHideFlags: 0
@@ -28992,7 +28986,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7432ada673e23b346ae64e6ce4d839e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3e2352861284cb4ba36c2b47a8ab7ff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -29093,7 +29087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  guardMovemnt: 0
 --- !u!1 &1190456537
 GameObject:
   m_ObjectHideFlags: 0
