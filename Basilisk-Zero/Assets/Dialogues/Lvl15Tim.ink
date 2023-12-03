@@ -4,8 +4,8 @@
 === GreetingsAndHelp ===
 #speaker:Tim
 #portrait:ZachNeutral
-******....groans*.
-I hate my job!.
+
+The Basilisk is not your enemy, it is THE enemy.
 
 -> END
 
