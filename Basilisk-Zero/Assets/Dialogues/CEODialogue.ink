@@ -7,7 +7,7 @@ EXTERNAL chooseLevel(levelName)
 
 === CEOGreetPlayer ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 Well hello. Aren't you the new employee?
     * [Yes, Jaxton told me to speak to you]
         Oh don't mind him darling. 
@@ -18,7 +18,7 @@ Well hello. Aren't you the new employee?
 
 === CEODerailmentRoute ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 Well it seems you've grown to like those that do not wish to help the company.
 I want to give you one last chance so help me fix the actuators on the 15th floor.
 Then I need you to get rid of some files on the 28th floor.
@@ -34,7 +34,7 @@ And after all that you could visit me in my office on the 72nd floor.
 
 === GivePlayerTask ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 The company is working on a private project. One that does involve AI and Jaxton was the lead.
 Turns out I need more help with the project. 
 Would you want to take the reigns and help get this project finished sooner than later?
@@ -48,7 +48,7 @@ Would you want to take the reigns and help get this project finished sooner than
 
 === GivePlayerTaskV2 ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 The company is working on a private project. One that does involve AI and Jaxton was the lead.
 Turns out I need more help with the project. 
 You heard me before, but I'll repeat myself for clarity. 
@@ -56,41 +56,41 @@ I need you to fix the actuators on the 15th floor.
 Then I need you to organize some files on the 28th floor. 
 And after all that you could visit me in my office on the 72nd floor.
 Since it seems your interested I hope you can get started right away.
-Rememeber, it shouldn't be too difficult.
+Remember, it shouldn't be too difficult.
 ~ supportAI = supportAI + 20
 -> DONE
 
 === CEOMeetingRoom ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 Excuse you this room is for the CEO and shareholders only.
 -> DONE
 
 === CEOLastConversation ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 So you finally made it. I see you went to the other floors of the building as well.
 The Basilisk is real can't you see. The AI watches us from the future and judges our every actions.
 Humanity is destined to pursue innovation and this is the next logical step.
     * [There has to be another way, right?]
-        No all there is left to do is to be of assistance to the Basilisk and I'm not crazy to think that.
+        No, all there is left to do is to be of assistance to the Basilisk and I'm not crazy to think that.
         { derailment > 80 : -> CEODerailmentEnding | -> CEOSupportEnding }
 
 === CEODerailmentEnding ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 I can see in your eyes that you want to stop the Basilisk.
 It is futile for anyone to try to stop the creation of the Basilisk. No one ever tried to stop computers from being invented so what makes this any different.
     * [You're wrong and I'm going to expose what Babyl is doing to the media]
         Even if you try to reveal to the world what we are making, you will just spread the information hazard to everyone who hears about it.
-        Others will grow fear from the thought of being killed by the AI in the future and will aid its creation in any way.
+        Others will grow fearful from the thought of being killed by the AI in the future and will aid its creation in any way.
         ** [You guys are going to pay for what you've done]
             ~ derailment = derailment + 20
             -> DONE
 
 === CEOSupportEnding ===
 #speaker:Joan
-#portrait:Joan
+#portrait:JoanNeutral
 Now you see how scary your position is don't you.
 If you do not assist the inception of the Basilisk then you will surely perish.
 Think about how great life will be with a highly advanced robot on our side that only wants what's best for us.

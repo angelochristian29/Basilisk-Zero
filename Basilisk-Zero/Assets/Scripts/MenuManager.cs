@@ -25,6 +25,9 @@ public class MenuManager : MonoBehaviour
     private string sceneName;
     [SerializeField] private Sprite f1Map;
     [SerializeField] private Sprite f2Map;
+    [SerializeField] private Sprite f3Map;
+    [SerializeField] private Sprite f4Map;
+    [SerializeField] private Sprite f5Map;
 
     public static MenuManager GetInstance()
     {
@@ -106,6 +109,15 @@ public class MenuManager : MonoBehaviour
                 break;
             case "SecondFloor":
                 mapImage.sprite = f2Map;
+                break;
+            case "FifteenthFloor":
+                mapImage.sprite = f3Map;
+                break;
+            case "TwentyEighthFloor":
+                mapImage.sprite = f4Map;
+                break;
+            case "SeventySecondFloor":
+                mapImage.sprite = f5Map;
                 break;
             default:
                 break;

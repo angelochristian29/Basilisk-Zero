@@ -11,21 +11,21 @@ Now all I need to do is plug in the USB with the virus.
 I might get fired for this ...
     * [Plug in USB]
         Okay, I think that did it!
-        OH YEA the computer doesn't work anymore.
+        OH YEAH, the computer doesn't work anymore.
         Now I should look for that angry employee named Jaxton.
         ~ derailment = derailment + 10
         -> DONE
 
 === TalkToZackFirst ===
 #speaker:Player
-I should probably talk to Zach first before messign around with the PC.
+I should probably talk to Zach first before messing around with the PC.
 -> DONE
 
 === RecoverFiles ===
 #speaker:Player
-alright so this device I have surpasses security and authorization on this system
-I wonder what they have here
-Well there's only one way to find out
+Alright, so this device I have surpasses security and authorization on this system.
+I wonder what they have here.
+Well, there's only one way to find out.
     * [Plug in USB]
         Okay, I think that did it!
         Let me check.

@@ -34877,6 +34877,22 @@ PrefabInstance:
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: f2Map
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fc3fb73b0d1c7447aab02fb8947a3d1, type: 3}
+    - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: f3Map
+      value: 
+      objectReference: {fileID: 21300000, guid: fe43f3bd198af974caebc9cf83dbf5fd, type: 3}
+    - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: f4Map
+      value: 
+      objectReference: {fileID: 21300000, guid: 89774ac7a553cd241bdd42ffe97eaa9d, type: 3}
+    - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
+      propertyPath: f5Map
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b204c62ebcbf8049ae8e52603a6e534, type: 3}
+    - target: {fileID: 6490713911727162129, guid: da9e81983d32caa449b72572c9df441f, type: 3}
       propertyPath: imageToFade
       value: 
       objectReference: {fileID: 138006766}

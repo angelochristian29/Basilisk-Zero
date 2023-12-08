@@ -31,5 +31,5 @@ Thank you for complying. Have a good day.
 
 === Escort ===
 #speaker:Guard
-I assume your done with your task. I can escort you to the elevator
+I assume you're done with your task. I can escort you to the elevator.
 -> DONE
