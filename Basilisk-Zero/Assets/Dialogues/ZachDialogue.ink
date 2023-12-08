@@ -13,6 +13,7 @@
 Hey! My name's Zach. Nice to meet you!
 Do you want to get straight to work?
     * { supportAI < 40 } [Nah, that sounds boring.]
+        #portrait:ZachHappy
         Hell yeah, let's play some games to pass the time!
         ~ derailment = derailment + 10
         -> ZachFirstMission
