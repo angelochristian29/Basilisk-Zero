@@ -3,8 +3,11 @@
 ->WanderingWorker
 === WanderingWorker ===
 #speaker:Worker
-Ah, the trials of this job weigh heavily upon us, do they not?
-Shall we redouble our efforts together for the sake of the glorious Basilisk?
+#portrait:Worker
+I hate this job.
+Please get me out.
+There may be imposters among us
+* [What? What are you talking about?]
 
 -> DONE
 
