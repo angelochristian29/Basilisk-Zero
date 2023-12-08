@@ -1,4 +1,5 @@
 Project Title: Basilisk-Zero
+Github Link: https://github.com/angelochristian29/Basilisk-Zero
 
 Description: A 2D psychological horror game based on the thought experiment of Roko's Basilisk
 
