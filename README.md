@@ -1,10 +1,15 @@
-Project Title: Basilisk-Zero
+## Project Title: Basilisk-Zero
 
-Description: A 2D psychological horror game based on the thought experiment of Roko's Basilisk
+### Github Link: 
+https://github.com/angelochristian29/Basilisk-Zero
 
-Prerequisite Downloads: Unity Hub, Editor Version 2021.3.19f1, editor of your choice (Recommended: Visual Studios Code).
+### Description: 
+A 2D psychological horror game based on the thought experiment of Roko's Basilisk
 
-Instructions to Run: 
+### Prerequisite Downloads: 
+Unity Hub, Editor Version 2021.3.19f1, editor of your choice (Recommended: Visual Studios Code).
+
+### Instructions to Run: 
 
 Step 1: Download the source code and open it in an IDE.
 
