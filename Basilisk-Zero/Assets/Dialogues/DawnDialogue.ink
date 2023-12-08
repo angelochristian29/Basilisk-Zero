@@ -15,12 +15,12 @@ Hey newbie! My name's Dawn.
 Do you want to start on your first assignment with me?
     * { derailment < 40 } [Sure thing!]
         Thanks so much!
-        Ok, I just need you to write a print statement on this logic file.
+        Okay, I just need you to write a print statement on this logic file.
         Then I need you to upload it to the 2nd Floor computer.
         ~ supportAI = supportAI + 10
         -> DawnTypingGame
     * { derailment >= 0 } [Sorry, I'm a little busy at the moment.]
-        That's ok.
+        That's okay.
         You probably have a lot on your plate.
         -> DawnAssistanceEnding
 
@@ -65,16 +65,16 @@ You still wanted to help me out right?
         I also heard there's a previous employee walking around yelling. Maybe you should check that out after.
         ~ supportAI = supportAI + 10
         -> DONE
-    * [Actually, I change my mind.]
+    * [Actually, I changed my mind.]
         #portrait:DawnPissed
-        That's ok. I guess I'll just do the rest by myself.
+        That's okay. I guess I'll just do the rest by myself.
         You should look for an angry guy wandering around since you're not going to help me.
         -> DONE
 
 === DawnDeflect ===
 #speaker:Dawn
 #portrait:DawnNeutral
-Hey newbie. Best not to lounge around the company building.
+Hey newbie. Best not to lounge around in the company building.
 Make sure you do your assigned tasks.
 The manager will get after you eventually.
 -> DONE
