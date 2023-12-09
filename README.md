@@ -6,12 +6,17 @@ https://github.com/angelochristian29/Basilisk-Zero
 ### Description: 
 A 2D psychological horror game based on the thought experiment of Roko's Basilisk
 
-### Prerequisite Downloads: 
+### Prerequisite Downloads for Developement: 
 Unity Hub, Editor Version 2021.3.19f1, editor of your choice (Recommended: Visual Studios Code).
+
+Downlaod Git LFS (Windows 3.4.0) for git assets management. Link: https://git-lfs.com/
+
+Recommended download for Git VCS: Github Desktop 
 
 ### Instructions to Run: 
 
 Step 1: Download the source code and open it in an IDE.
+You clone the repository in Github desktop and choose Github LFS configuiration when prompted. 
 
 Step 2: Open the Unity hub editor.
 ![image](https://github.com/angelochristian29/Basilisk-Zero/assets/78775621/2ee27696-909f-4b35-8603-e5b87eacf82a)
