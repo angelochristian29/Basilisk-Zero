@@ -10,16 +10,16 @@ A 2D psychological horror game based on the thought experiment of Roko's Basilis
 Unity Hub, Editor Version 2021.3.19f1, editor of your choice (Recommended: Visual Studios Code).
 
 Download Git and Git LFS (Windows 3.4.0) for Git assets management. Link: https://git-lfs.com/
-  * After downloading GitLFS and cloning the repository, git bash in the folder
-  * Type "git lfs install" into the command prompt
-  * Video Tutorial: https://youtu.be/09McJ2NL7YM
 
 Recommended download for Git VCS: Github Desktop 
 
 ### Instructions to Run: 
 
-Step 1: Download the source code and open it in an IDE.
-You clone the repository on GitHub desktop and choose Github LFS configuration when prompted. 
+Step 1: Clone the repository on GitHub desktop and choose Github LFS configuration when prompted.
+  * After downloading GitLFS and cloning the repository, git bash in the folder
+  * Type "git lfs install" into the command prompt
+  * Video Tutorial: https://youtu.be/09McJ2NL7YM
+
 
 Step 2: Open the Unity hub editor.
 ![image](https://github.com/angelochristian29/Basilisk-Zero/assets/78775621/2ee27696-909f-4b35-8603-e5b87eacf82a)
