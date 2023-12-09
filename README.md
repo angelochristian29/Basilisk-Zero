@@ -23,6 +23,7 @@ Step 1: Clone the repository on GitHub desktop and choose Github LFS configurati
 
 Step 2: Open the Unity hub editor.
   * Add existing project and choose the folder with the repository
+
 ![image](https://github.com/angelochristian29/Basilisk-Zero/assets/78775621/2ee27696-909f-4b35-8603-e5b87eacf82a)
 
 Step 3: On the Project files tab navigate to Assets/Scene/FirstFloor
